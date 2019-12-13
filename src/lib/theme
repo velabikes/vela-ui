@@ -1,0 +1,45 @@
+import {createContext, useContext} from 'react'
+
+export const ThemeContext = createContext(null)
+
+export function useTheme() {
+  const themeValue = useContext(ThemeContext)
+  return themes[themeValue] || themes.light
+}
+
+const themes = {
+  light: {
+    colors: {
+      background: '#f1f1f1',
+      foreground: '#f9f9f9',
+      text: '#191919',
+      footnote: '#666',
+      placeholder: '#A4A4A4',
+      link: '#3a8ed2',
+      input: '#FFFFFF90',
+      border: '#C1C1C1',
+      brand: '#417E6B',
+      primary: '#4D9C87',
+      secondary: '#e87d77',
+      negative: '#BB444E',
+      disabled: '#C1C1C1'
+    }
+  },
+  dark: {
+    colors: {
+      background: '#1D1D1D',
+      foreground: '#333333',
+      text: '#f9f9f9',
+      footnote: '#A4A4A4',
+      placeholder: '#666',
+      link: '#74ABCD',
+      input: '#333333',
+      border: '#666',
+      brand: '#417E6B',
+      primary: '#58ab97',
+      secondary: '#f1A09D',
+      negative: '#E14A42',
+      disabled: '#444'
+    }
+  }
+}
