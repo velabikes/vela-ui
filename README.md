@@ -2,7 +2,7 @@
 Vela React Components Toolkit
 
 ## Install
-`npm install vela-ui`
+`npm install @vela/ui`
 
 ## Loacal Development
 
