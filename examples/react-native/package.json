@@ -1,5 +1,5 @@
 {
-  "name": "vela-ui-example",
+  "name": "@vela/ui-example",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
     "react-native": "0.61.5",
     "react-native-svg": "^9.13.6",
     "react-powerplug": "^1.0.0",
-    "vela-ui": "file:../.."
+    "@vela/ui": "file:../.."
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",

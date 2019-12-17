@@ -19,7 +19,7 @@ import {
   Icons,
   Navbar,
   Heading
-} from 'vela-ui'
+} from '@vela/ui'
 import {Value} from 'react-powerplug'
 
 const StyleguideScreen = () => {
