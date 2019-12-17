@@ -1,4 +1,6 @@
-# vela-ui
+![](https://img.shields.io/npm/v/@vela/ui)
+
+# UI
 Vela React Components Toolkit
 
 ## Install
