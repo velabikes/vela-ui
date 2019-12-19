@@ -3,5 +3,5 @@ module.exports = {
     ios: {},
     android: {}
   },
-  assets: ['./node_modules/vela-ui/src/fonts/']
+  assets: ['./node_modules/@vela/ui/src/fonts/']
 }

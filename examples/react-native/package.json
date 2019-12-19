@@ -10,11 +10,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@vela/ui": "file:../..",
+    "escape-string-regexp": "^2.0.0",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-svg": "^9.13.6",
-    "react-powerplug": "^1.0.0",
-    "@vela/ui": "file:../.."
+    "react-powerplug": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
