@@ -1,10 +1,13 @@
 import {createContext, useContext} from 'react'
+import { useColorScheme } from 'react-native-appearance'
 
 export const ThemeContext = createContext(null)
 
 export function useTheme() {
+  const schemeValue = useColorScheme()
+  alert(schemeValue)
   const themeValue = useContext(ThemeContext)
-  return themes[themeValue] || themes.light
+  return themes[themeValue] || themes[schemeValue] || themes.light
 }
 
 const themes = {
