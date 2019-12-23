@@ -5,7 +5,6 @@ export const ThemeContext = createContext(null)
 
 export function useTheme() {
   const schemeValue = useColorScheme()
-  alert(schemeValue)
   const themeValue = useContext(ThemeContext)
   return themes[themeValue] || themes[schemeValue] || themes.light
 }
