@@ -10,7 +10,6 @@ function Navbar({children, title, left, leftIcon: LeftIcon, rightIcon: RightIcon
   const {colors} = useTheme()
   const scroll = useRef(new Animated.Value(0)).current
   const basePageStyle = {
-    backgroundColor: colors.background,
     flex: 1
   }
   const baseStyle = {
