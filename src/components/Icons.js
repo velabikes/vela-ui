@@ -14,6 +14,18 @@ export const Pin = ({style, ...props}) => {
   )
 }
 
+export const Parking = ({style, ...props}) => {
+  const {colors} = useTheme()
+  return (
+    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
+      <Path
+        d="M11.184 6.382c1.86 0 3.288.33 4.284.99.996.648 1.494 1.716 1.494 3.204 0 1.5-.504 2.586-1.512 3.258-1.008.66-2.448.99-4.32.99h-.882V19H7.44V6.706c.612-.12 1.26-.204 1.944-.252a26.102 26.102 0 011.8-.072zm.18 2.394c-.204 0-.408.006-.612.018-.192.012-.36.024-.504.036v3.6h.882c.972 0 1.704-.132 2.196-.396.492-.264.738-.756.738-1.476 0-.348-.066-.636-.198-.864-.12-.228-.3-.408-.54-.54a2.134 2.134 0 00-.846-.288 6.37 6.37 0 00-1.116-.09z"
+        fill={(style && style.color) || colors.text}
+      />
+    </Svg>
+  )
+}
+
 export const Location = ({style, ...props}) => {
   const {colors} = useTheme()
   return (
