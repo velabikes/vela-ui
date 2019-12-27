@@ -21,13 +21,14 @@ import {
   Heading
 } from '@vela/ui'
 import {Value} from 'react-powerplug'
+const {Back} = Icons
 
 const StyleguideScreen = () => {
   const [theme, setTheme] = useState('light')
   return (
     <Theme value={theme} style={{flex: 1}}>
       <Box style={{flex: 1}}>
-        <Navbar>
+        <Navbar title="Vela Styleguide" leftIcon={Back}>
           <View style={pageStyle}>
             <Spacer />
             <Heading size="s">Icons</Heading>

@@ -6,7 +6,7 @@ import Heading from './Heading'
 import Spacer from './Spacer'
 import {Menu, Back} from './Icons'
 
-function Navbar({children}) {
+function Navbar({children, title, left, leftIcon: LeftIcon, rightIcon: RightIcon}) {
   const {colors} = useTheme()
   const scroll = useRef(new Animated.Value(0)).current
   const basePageStyle = {
@@ -57,11 +57,11 @@ function Navbar({children}) {
         <Animated.View style={baseContentStyle}>
           <Spacer size="s" />
           <View style={baseNavStyle}>
-            <Back style={baseIconStyle} />
-            <Text style={baseActionStyle}>Edit</Text>
+            {LeftIcon && <LeftIcon style={baseIconStyle} />}
+            {RightIcon && <RightIcon style={baseIconStyle} />}
           </View>
           <Spacer size="s" />
-          <Heading style={baseTitleStyle}>Styleguide</Heading>
+          <Heading style={baseTitleStyle}>{title}</Heading>
           <Spacer />
         </Animated.View>
       </Animated.View>
