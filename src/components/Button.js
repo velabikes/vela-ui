@@ -40,7 +40,7 @@ function Button({style, solid, disabled, variant, icon, label, onPress}) {
     width: 16,
     height: 16,
     marginRight: 4,
-    ...variantStyle
+    color: variantStyle.color
   }
   const baseTextStyle = {
     fontSize: 16,
