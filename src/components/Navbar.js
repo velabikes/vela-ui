@@ -38,8 +38,8 @@ function Navbar({children}) {
     alignItems: 'center'
   }
   const baseIconStyle = {
-    width: 24,
-    height: 24,
+    width: 22,
+    height: 22,
     color: colors.nav
   }
   const baseActionStyle = {

@@ -103,7 +103,7 @@ export const Dropdown = ({style, ...props}) => {
 export const Back = ({style, ...props}) => {
   const {colors} = useTheme()
   return (
-    <Svg viewBox="0 0 15.583 15.175" style={[defaultStyle, style]} {...props}>
+    <Svg viewBox="0 0 16 16" style={[defaultStyle, style]} {...props}>
       <Path
         d="M14.583 6.593H3.413l4.88-4.88a1.008 1.008 0 0 0 0-1.42 1 1 0 0 0-1.41 0l-6.59 6.59a1 1 0 0 0 0 1.41l6.59 6.59a1 1 0 1 0 1.41-1.41l-4.88-4.88h11.17a1 1 0 0 0 0-2z"
         fill={(style && style.color) || colors.text}
