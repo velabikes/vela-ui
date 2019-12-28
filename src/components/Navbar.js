@@ -6,11 +6,12 @@ import Heading from './Heading'
 import Spacer from './Spacer'
 import {Menu, Back} from './Icons'
 
-function Navbar({children, title, left, leftIcon: LeftIcon, rightIcon: RightIcon}) {
+function Navbar({children, title, left, leftIcon: LeftIcon, rightIcon: RightIcon, style}) {
   const {colors} = useTheme()
   const scroll = useRef(new Animated.Value(0)).current
   const basePageStyle = {
-    flex: 1
+    flex: 1,
+    backgroundColor: colors.background
   }
   const baseStyle = {
     backgroundColor: scroll.interpolate({
@@ -50,7 +51,7 @@ function Navbar({children, title, left, leftIcon: LeftIcon, rightIcon: RightIcon
     color: colors.title
   }
   return (
-    <View style={basePageStyle}>
+    <View style={[basePageStyle, style]}>
       <Animated.View style={baseStyle}>
         <SafeAreaView />
         <Animated.View style={baseContentStyle}>
