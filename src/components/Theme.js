@@ -1,10 +1,7 @@
 import React from 'react'
 import {ThemeContext} from '../lib/theme'
-import { AppearanceProvider } from 'react-native-appearance';
 
-const Theme = ({children}) =>
-  <AppearanceProvider>
-    <ThemeContext.Provider>{children}</ThemeContext.Provider>
-  </AppearanceProvider>
+const Theme = ({children, ...props}) =>
+  <ThemeContext.Provider {...props}>{children}</ThemeContext.Provider>
 
 export default Theme

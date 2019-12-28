@@ -18,13 +18,13 @@ import {
   Theme,
   Icons,
   Navbar,
-  Heading
+  Heading,
 } from '@vela/ui'
 import {Value} from 'react-powerplug'
 const {Back} = Icons
 
 const StyleguideScreen = () => {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('default')
   return (
     <Theme value={theme} style={{flex: 1}}>
       <Box style={{flex: 1}}>
@@ -114,6 +114,7 @@ const StyleguideScreen = () => {
             <Spacer />
             <Control
               options={[
+                {label: 'System', value: 'default'},
                 {label: 'Light', value: 'light'},
                 {label: 'Dark', value: 'dark'}
               ]}
@@ -126,11 +127,23 @@ const StyleguideScreen = () => {
                 <Control
                   options={[
                     {icon: Icons.Wrench, value: 1},
-                    {icon: Icons.Logo, value: 2},
+                    {icon: Icons.Pin, value: 2},
                     {icon: Icons.Location, value: 3}
                   ]}
                   selected={value}
                   onSelect={set}
+                />
+              )}
+            </Value>
+            <Spacer size="s" />
+            <Value initial={false}>
+              {({value, set}) => (
+                <Control
+                  options={[
+                    {icon: Icons.Logo, value: true}
+                  ]}
+                  selected={value}
+                  onSelect={() => set(!value)}
                 />
               )}
             </Value>
