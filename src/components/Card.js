@@ -10,7 +10,7 @@ function Card({children, blur, image, contentStyle, containerStyle, onPress}) {
   const baseContainerStyle = {
     shadowColor: '#000',
     backgroundColor: colors.foreground,
-    borderRadius: 32,
+    borderRadius: 24,
     shadowOffset: {
       width: 0,
       height: 1
@@ -20,8 +20,8 @@ function Card({children, blur, image, contentStyle, containerStyle, onPress}) {
     elevation: 1
   }
   const baseImageStyle = {
-    borderTopLeftRadius: 32,
-    borderTopRightRadius: 32,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
     height: 200
   }
   const baseContentStyle = {
