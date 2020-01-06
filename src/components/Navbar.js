@@ -69,6 +69,7 @@ function Navbar({children, title, left, leftIcon: LeftIcon, rightIcon: RightIcon
       <Animated.ScrollView
         overScrollMode={'never'}
         scrollEventThrottle={16}
+        contentContainerStyle={{flex: 1}}
         onScroll={Animated.event([
           {
             nativeEvent: {contentOffset: {y: scroll}}
