@@ -2,7 +2,7 @@ import React from 'react'
 import Svg, {Path} from 'react-native-svg'
 import {useTheme} from '../lib/theme'
 
-export const Pin = ({style, ...props}) => {
+export const Marker = ({style, ...props}) => {
   const {colors} = useTheme()
   return (
     <Svg viewBox="0 0 97.14 128.36" style={[defaultStyle, style]} {...props}>
@@ -13,6 +13,19 @@ export const Pin = ({style, ...props}) => {
     </Svg>
   )
 }
+
+export const Pin = ({style, ...props}) => {
+  const {colors} = useTheme()
+  return (
+    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
+      <Path
+        d="M16 6.902C16 4.712 14.244 3 12 3 9.756 3 8 4.713 8 6.902c0 1.712 1.17 3.235 2.83 3.71v9.612c0 .095.097.285.194.285l.586.381c.195.19.585.095.78 0l.683-.38c.098-.096.195-.19.195-.286v-9.611C14.83 10.137 16 8.614 16 6.902z"
+        fill={(style && style.color) || colors.text}
+      />
+    </Svg>
+  )
+}
+
 
 export const Parking = ({style, ...props}) => {
   const {colors} = useTheme()
@@ -172,5 +185,6 @@ export default {
   Bolt,
   Location,
   Pin,
+  Marker,
   Parking
 }
