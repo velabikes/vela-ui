@@ -29,7 +29,7 @@ const StyleguideScreen = () => {
     <Theme value={theme} style={{flex: 1}}>
       <Box style={{flex: 1}}>
         <Navbar title="Vela Styleguide" leftIcon={Back}>
-          <ScrollView>
+          <ScrollView contentContainerStyle={pageStyle}>
             <Spacer />
             <Heading size="s">Icons</Heading>
             <Spacer />
