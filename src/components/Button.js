@@ -37,15 +37,15 @@ function Button({style, solid, disabled, variant, icon, label, onPress}) {
     ...variantStyle
   }
   const baseIconStyle = {
-    width: 16,
-    height: 16,
+    width: 14,
+    height: 14,
     marginRight: 4,
     color: variantStyle.color
   }
   const baseTextStyle = {
     fontSize: 16,
     lineHeight: 16,
-    color: '#4F7EA8',
+    color: variantStyle.color,
     fontWeight: 'bold',
     fontFamily: 'Barlow',
     ...variantStyle
