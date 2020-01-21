@@ -1,7 +1,7 @@
 import React from 'react'
 import {View} from 'react-native'
 import Text from './Text'
-import {Dropdown} from './Icons'
+import {Down} from './Icons'
 import {useTheme} from '../lib/theme'
 
 function SelectInput({focus, placeholder, error, selected}) {
@@ -38,7 +38,7 @@ function SelectInput({focus, placeholder, error, selected}) {
         <Text style={placeholderStyle}>{placeholder}</Text>
       )}
       {selected && <Text style={textStyle}>{selected}</Text>}
-      <Dropdown style={arrowStyle} />
+      <Down style={arrowStyle} />
     </View>
   )
 }
