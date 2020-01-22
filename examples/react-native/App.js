@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {View} from 'react-native'
+import {View, ScrollView} from 'react-native'
 import {
   Paragraph,
   Subheading,
@@ -29,7 +29,7 @@ const StyleguideScreen = () => {
     <Theme value={theme} style={{flex: 1}}>
       <Box style={{flex: 1}}>
         <Navbar title="Vela Styleguide" leftIcon={Back}>
-          <View style={pageStyle}>
+          <ScrollView contentContainerStyle={pageStyle}>
             <Spacer />
             <Heading size="s">Icons</Heading>
             <Spacer />
@@ -241,7 +241,7 @@ const StyleguideScreen = () => {
               ter uma experiência mais positiva nos espaços públicos.
             </Paragraph>
             <Spacer size="xl" />
-          </View>
+          </ScrollView>
         </Navbar>
       </Box>
     </Theme>
