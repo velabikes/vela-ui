@@ -168,6 +168,8 @@ const StyleguideScreen = () => {
             <Button label="Solid Disabled" solid disabled />
             <Spacer size="s" />
             <Button label="Solid Negative" solid variant="negative" />
+            <Spacer size="s" />
+            <Button variant="cta" round solid icon={Icons.Add}/>
 
             <Spacer size="xl" />
 
