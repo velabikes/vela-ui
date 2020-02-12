@@ -12,8 +12,8 @@ export function useTheme() {
 const themes = {
   light: {
     colors: {
-      background: '#FFFEFE',
-      foreground: '#D6D4D4',
+      background: '#EFEFEF',
+      foreground: '#FFFEFE',
       navbar: '#EFEFEF',
       nav: '#478f7b',
       title: '#4B4A4A',
@@ -28,7 +28,7 @@ const themes = {
       secondary: '#4FD4F0',
       negative: '#E52B1F',
       disabled: '#D6D4D4',
-      cta: "FF6574"
+      cta: "#FF6574"
     }
   },
   dark: {
