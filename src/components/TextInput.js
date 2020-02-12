@@ -12,7 +12,8 @@ function TextInput({style, error, ...props}) {
     borderRadius: 14,
     fontSize: 16,
     lineHeight: 20,
-    backgroundColor: colors.input
+    backgroundColor: colors.input,
+    color: colors.text
   }
   const textStyle = {
     color: colors.text
