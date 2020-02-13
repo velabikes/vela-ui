@@ -45,7 +45,7 @@ function Button({style, solid, round, disabled, variant, icon, label, onPress}) 
     ...variantStyle
   }
   const baseRoundStyle = {
-    borderRadius: 32,
+    borderRadius: 48,
     padding: 16,
     width: 48,
     height: 48,
