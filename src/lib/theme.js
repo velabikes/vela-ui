@@ -9,6 +9,11 @@ export function useTheme() {
   return themes[themeValue] || themes[schemeValue] || themes.light
 }
 
+const metrics = {
+  padding: 24,
+  text: 14
+}
+
 const themes = {
   light: {
     colors: {
@@ -29,7 +34,8 @@ const themes = {
       negative: '#E52B1F',
       disabled: '#D6D4D4',
       cta: "#FF6574"
-    }
+    },
+    metrics
   },
   dark: {
     colors: {
@@ -50,6 +56,7 @@ const themes = {
       negative: '#FA4242',
       disabled: '#4B4A4A',
       cta: '#FB9199'
-    }
+    },
+    metrics
   }
 }
