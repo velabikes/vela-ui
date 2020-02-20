@@ -1,12 +1,12 @@
 import React from 'react'
 import {Navbar, Button, Icons} from '@vela/ui'
 
-const Profile = ({ navigation }) => {
+const Device = ({navigation}) => {
   return (
-    <Navbar title="Meu Perfil">
+    <Navbar title="Minha Vela">
       <Button icon={Icons.Menu} solid onPress={() => navigation.openDrawer()} />
     </Navbar>
   )
 }
 
-export default Profile
+export default Device

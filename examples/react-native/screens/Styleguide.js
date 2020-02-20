@@ -1,4 +1,6 @@
 import {View, ScrollView} from 'react-native'
+import React, { useState } from 'react';
+import {Value} from 'react-powerplug'
 import {
   Paragraph,
   Subheading,
@@ -20,12 +22,13 @@ import {
   Heading,
 } from '@vela/ui'
 
-function Styleguide() {
-    const [theme, setTheme] = useState('default')
+function Styleguide({ navigation }) {
+    const [theme, setTheme] = useState('')
     return (
         <Theme value={theme} style={{flex: 1}}>
         <Box style={{flex: 1}}>
-        <Navbar title="Vela Styleguide" leftIcon={Back}>
+        <Navbar title="Vela Styleguide">
+        <Button icon={Icons.Back} solid onPress={() => navigation.goBack()} />
         <ScrollView contentContainerStyle={pageStyle}>
           <Spacer />
           <Heading size="s">Icons</Heading>
