@@ -3,7 +3,7 @@ import {Navbar, Button, Icons} from '@vela/ui'
 
 const Dashboard = ({navigation}) => {
   return (
-    <Navbar title="Minha Vela">
+    <Navbar title="Dashboard">
       <Button icon={Icons.Menu} solid onPress={() => navigation.openDrawer()} />
     </Navbar>
   )
