@@ -1,11 +1,10 @@
-
 import React from 'react'
-import {Navbar, Button} from '@vela/ui'
+import {Navbar, Button, Icons} from '@vela/ui'
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   return (
-    <Navbar title="Profile">
-      <Button label="Next" />
+    <Navbar title="Meu Perfil">
+      <Button icon={Icons.Menu} solid onPress={() => navigation.openDrawer()} />
     </Navbar>
   )
 }
