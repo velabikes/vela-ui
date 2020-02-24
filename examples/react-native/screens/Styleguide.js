@@ -18,19 +18,17 @@ import {
   Control, 
   Theme,
   Icons,
-  Navbar,
   Heading,
 } from '@vela/ui'
 
 function Styleguide({ navigation }) {
     const [theme, setTheme] = useState('')
     return (
-        <Theme value={theme} style={{flex: 1}}>
+      <Theme value={theme} style={{flex: 1}}>
         <Box style={{flex: 1}}>
-        <Navbar title="Vela Styleguide">
-        <Button icon={Icons.Back} solid onPress={() => navigation.goBack()} />
-        <ScrollView contentContainerStyle={pageStyle}>
-          <Spacer />
+          <Button icon={Icons.Back} solid onPress={() => navigation.goBack()} />
+            <ScrollView>
+              <Spacer />
           <Heading size="s">Icons</Heading>
           <Spacer />
           <View
@@ -244,8 +242,7 @@ function Styleguide({ navigation }) {
           </Paragraph>
           <Spacer size="xl" />
         </ScrollView>
-      </Navbar>
-    </Box>
+      </Box>
     </Theme>
     )
   }

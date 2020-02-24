@@ -3,9 +3,10 @@ import {View} from 'react-native'
 import {useTheme} from '../lib/theme'
 
 const Box = ({children, style}) => {
-  const {colors} = useTheme()
+  const {colors, metrics} = useTheme()
   const baseStyle = {
-    backgroundColor: colors.background
+    backgroundColor: colors.background,
+    padding: metrics.padding
   }
   return <View style={[baseStyle, style]}>{children}</View>
 }

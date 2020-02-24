@@ -19,8 +19,6 @@ const themes = {
     colors: {
       background: '#EFEFEF',
       foreground: '#FFFEFE',
-      navbar: '#EFEFEF',
-      nav: '#478f7b',
       title: '#4B4A4A',
       text: '#2D2D2D',
       footnote: '#7B7B7B',
@@ -41,8 +39,6 @@ const themes = {
     colors: {
       background: '#2D2D2D',
       foreground: '#4B4A4A',
-      navbar: '#7B7B7B',
-      nav: '#84E8CD',
       title: '#EFEFEF',
       text: '#FFFEFE',
       footnote: '#C3BEBE',
