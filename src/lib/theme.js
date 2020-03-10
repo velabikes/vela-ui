@@ -1,7 +1,11 @@
 import {createContext, useContext} from 'react'
-import { useColorScheme } from 'react-native-appearance'
+import { Appearance, useColorScheme } from 'react-native-appearance'
 
-export const ThemeContext = createContext(null)
+export const ThemeContext = createContext(Appearance.getColorScheme())
+
+const subscription = Appearance.addChangeListener(({ colorScheme }) => {
+  alert(colorScheme)
+});
 
 export function useTheme() {
   const schemeValue = useColorScheme()

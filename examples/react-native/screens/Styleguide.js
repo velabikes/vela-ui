@@ -24,7 +24,6 @@ import {
 function Styleguide({ navigation }) {
     const [theme, setTheme] = useState('')
     return (
-      <Theme value={theme} style={{flex: 1}}>
         <Box style={{flex: 1}}>
             <ScrollView>
               <Spacer />
@@ -242,7 +241,6 @@ function Styleguide({ navigation }) {
           <Spacer size="xl" />
         </ScrollView>
       </Box>
-    </Theme>
     )
   }
 

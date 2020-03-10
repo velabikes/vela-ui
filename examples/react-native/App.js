@@ -6,20 +6,25 @@ import Dashboard from './screens/Dashboard'
 import Profile from './screens/Profile'
 import Styleguide from './screens/Styleguide'
 import Device from './screens/Device'
-import { Icons, DrawerContent } from '@vela/ui'
+import { Icons, DrawerContent, Theme } from '@vela/ui'
 import { Button, Text } from 'react-native'
+import { useColorScheme } from 'react-native-appearance'
 
 const StackNavigator = createStackNavigator()
 const Drawer = createDrawerNavigator()
 
 const StyleguideNavigator = () => {
   const navigation = useNavigation()
+  const cs = useColorScheme()
+  alert(cs)
   return (
     <StackNavigator.Navigator>
       <StackNavigator.Screen
         component={Styleguide}
         name="Styleguide"
-        options={{headerLeft: ({onPress}) => <Icons.Menu onPress={navigation.openDrawer} />}}
+        options={{headerLeft: () =>
+          <Icons.Menu onPress={navigation.openDrawer} />
+        }}
       />
     </StackNavigator.Navigator>
   )
@@ -27,6 +32,7 @@ const StyleguideNavigator = () => {
 
 function App () {
   return (
+    <Theme>
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Styleguide" drawerContent={DrawerContent}>
         <Drawer.Screen name="Profile" component={Profile} 
@@ -55,6 +61,7 @@ function App () {
         />
       </Drawer.Navigator>
     </NavigationContainer>
+    </Theme>
   )
 }
 
