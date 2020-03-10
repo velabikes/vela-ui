@@ -13,6 +13,7 @@
     "@react-native-community/masked-view": "^0.1.6",
     "@react-navigation/drawer": "^5.0.4",
     "@react-navigation/native": "^5.0.4",
+    "@react-navigation/stack": "^5.1.1",
     "@vela/ui": "file:../../",
     "escape-string-regexp": "^2.0.0",
     "react": "16.9.0",

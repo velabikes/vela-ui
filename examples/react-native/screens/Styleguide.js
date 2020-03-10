@@ -26,7 +26,6 @@ function Styleguide({ navigation }) {
     return (
       <Theme value={theme} style={{flex: 1}}>
         <Box style={{flex: 1}}>
-          <Button icon={Icons.Back} solid onPress={() => navigation.goBack()} />
             <ScrollView>
               <Spacer />
           <Heading size="s">Icons</Heading>
