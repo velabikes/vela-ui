@@ -1,4 +1,5 @@
 import DrawerItem from './components/DrawerItem'
+import Surface from './components/Surface'
 
 export Box from './components/Box'
 export Button from './components/Button'
@@ -23,4 +24,5 @@ export TextInput from './components/TextInput'
 export Theme from './components/Theme'
 export DrawerItem from './components/DrawerItem'
 export DrawerContent from './components/DrawerContent'
+export Surface from './components/Surface'
 export {useTheme} from './lib/theme'

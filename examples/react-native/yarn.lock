@@ -980,7 +980,7 @@
     color "^3.1.2"
     react-native-iphone-x-helper "^1.2.1"
 
-"@react-navigation/native@^5.0.4":
+"@react-navigation/native@^5.0.4", "@react-navigation/native@^5.0.9":
   version "5.0.9"
   resolved "https://registry.yarnpkg.com/@react-navigation/native/-/native-5.0.9.tgz#bbd22928f0fbe808a96dd525ebeb9a1aa0b82900"
   integrity sha512-iiCBWKv5zQ/PdvGhUEqMyDU30KK8PL2yXIG0j0CCTXriwRebJ1GPhBtfJdDFkSzzFt9Mhxgmok/+GJV8HqvJqA==
@@ -1127,6 +1127,8 @@
 
 "@vela/ui@file:../..":
   version "0.0.17"
+  dependencies:
+    "@react-navigation/native" "^5.0.9"
 
 abab@^2.0.0:
   version "2.0.3"

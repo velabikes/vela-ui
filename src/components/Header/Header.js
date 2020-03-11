@@ -1,22 +1,42 @@
-import React from 'react'
-import {SafeAreaView, View} from 'react-native'
-import Box from "../Box"
-import HeaderMenuButton from "./HeaderMenuButton"
-import Text from "../Text"
+import React from "react";
+import { SafeAreaView, View } from "react-native";
+import Box from "../Box";
+import HeaderMenuButton from "./HeaderMenuButton";
+import Heading from "../Heading";
+import Surface from "../Surface";
 
 const boxStyle = {
-  flexDirection: 'row',
-  justifyContent: 'space-evenly'
-}
+  flexDirection: "row",
+  alignItems: "center"
+};
 
-export default function Header() {
+const segmentStyle = {
+  flex: 1
+};
+
+const titleStyle = {
+  textAlign: "center"
+};
+
+export default function Header({ scene }) {
+  const { options } = scene.descriptor;
+  const title = options.title || scene.route.name;
+
   return (
-    <Box>
-      <SafeAreaView style={boxStyle}>
-        <HeaderMenuButton />
-        <Text>Title</Text>
-        <View />
+    <Surface>
+      <SafeAreaView>
+        <Box style={boxStyle}>
+          <View style={segmentStyle}>
+            <HeaderMenuButton />
+          </View>
+          <View style={segmentStyle}>
+            <Heading size="xs" style={titleStyle}>
+              {title}
+            </Heading>
+          </View>
+          <View style={segmentStyle} />
+        </Box>
       </SafeAreaView>
-    </Box>
-  )
+    </Surface>
+  );
 }

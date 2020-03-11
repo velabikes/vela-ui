@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button, Icons} from '@vela/ui'
+import {Button, Icons} from '@vela/ui'
 
-const Profile = ({ navigation }) => {
+const Profile = ({navigation}) => {
   return (
-      <Button icon={Icons.Menu} solid onPress={() => navigation.openDrawer()} />
+    <Button icon={Icons.Menu} solid onPress={() => navigation.openDrawer()} />
   )
 }
 

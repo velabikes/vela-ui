@@ -1,14 +1,17 @@
-import React from 'react'
-import {View} from 'react-native'
-import {useTheme} from '../lib/theme'
+import React from "react";
+import Surface from "./Surface";
+import { useTheme } from "../lib/theme";
 
-const Box = ({children, style, ...props}) => {
-  const {colors, metrics} = useTheme()
+const Box = ({ children, style, ...props }) => {
+  const { metrics } = useTheme();
   const baseStyle = {
-    backgroundColor: colors.background,
     padding: metrics.padding
-  }
-  return <View style={[baseStyle, style]} {...props}>{children}</View>
-}
+  };
+  return (
+    <Surface style={[baseStyle, style]} {...props}>
+      {children}
+    </Surface>
+  );
+};
 
-export default Box
+export default Box;
