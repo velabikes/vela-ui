@@ -19,7 +19,7 @@ const titleStyle = {
 };
 
 export default function Header({ scene }) {
-  const { options } = scene.descriptor;
+  const { options, navigation } = scene.descriptor;
   const title = options.title || scene.route.name;
 
   return (
@@ -27,7 +27,7 @@ export default function Header({ scene }) {
       <SafeAreaView>
         <Box style={boxStyle}>
           <View style={segmentStyle}>
-            <HeaderMenuButton />
+            { navigation && navigation.openDrawer && <HeaderMenuButton /> }
           </View>
           <View style={segmentStyle}>
             <Heading size="xs" style={titleStyle}>
