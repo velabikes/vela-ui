@@ -6,18 +6,31 @@ import Dashboard from './screens/Dashboard'
 import Profile from './screens/Profile'
 import Styleguide from './screens/Styleguide'
 import Device from './screens/Device'
+import IconsScreen from './screens/Icons'
+
 import {Icons, DrawerContent, Theme, Header} from '@vela/ui'
 
 const StackNavigator = createStackNavigator()
 const Drawer = createDrawerNavigator()
 
 const StyleguideNavigator = () => {
-  const navigation = useNavigation()
   return (
     <StackNavigator.Navigator>
       <StackNavigator.Screen
         component={Styleguide}
         name="Styleguide"
+        options={{header: Header}}
+      />
+    </StackNavigator.Navigator>
+  )
+}
+
+const IconsNavigator = () => {
+  return (
+    <StackNavigator.Navigator>
+      <StackNavigator.Screen
+        component={IconsScreen}
+        name="Icons"
         options={{header: Header}}
       />
     </StackNavigator.Navigator>
@@ -31,6 +44,14 @@ function App() {
         <Drawer.Navigator
           initialRouteName="Styleguide"
           drawerContent={DrawerContent}>
+          <Drawer.Screen
+            name="Icons"
+            component={IconsNavigator}
+            options={{
+              drawerLabel: 'Icons',
+              drawerIcon: Icons.Bolt
+            }}
+          />
           <Drawer.Screen
             name="Profile"
             component={Profile}
