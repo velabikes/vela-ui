@@ -3,7 +3,7 @@ import {TouchableOpacity, View} from 'react-native'
 import {useTheme} from '../lib/theme'
 import Image from './Image'
 
-function Card({children, blur, image, contentStyle, containerStyle, onPress}) {
+function Card({children, blur, image, contentStyle, containerStyle, onPress, style}) {
   const {colors} = useTheme()
   const Container = onPress ? TouchableOpacity : View
 
@@ -30,7 +30,7 @@ function Card({children, blur, image, contentStyle, containerStyle, onPress}) {
   }
 
   return (
-    <Container style={[baseContainerStyle, containerStyle]} onPress={onPress}>
+    <Container style={[baseContainerStyle, containerStyle, style]} onPress={onPress}>
       {image && <Image source={image} style={baseImageStyle} />}
 
       <View style={[baseContentStyle, contentStyle]} blurType="light">
