@@ -1,5 +1,6 @@
 import DrawerItem from './components/DrawerItem'
 import Surface from './components/Surface'
+import Speedometer from './components/Speedometer'
 
 export Box from './components/Box'
 export Button from './components/Button'
@@ -25,4 +26,5 @@ export Theme from './components/Theme'
 export DrawerItem from './components/DrawerItem'
 export DrawerContent from './components/DrawerContent'
 export Surface from './components/Surface'
+export Speedometer from './components/Speedometer'
 export {useTheme} from './lib/theme'

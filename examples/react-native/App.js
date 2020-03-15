@@ -7,6 +7,7 @@ import Profile from './screens/Profile'
 import Styleguide from './screens/Styleguide'
 import Device from './screens/Device'
 import IconsScreen from './screens/Icons'
+import ChartsScreen from './screens/Charts'
 
 import {Icons, DrawerContent, Theme, Header} from '@vela/ui'
 
@@ -37,6 +38,18 @@ const IconsNavigator = () => {
   )
 }
 
+const ChartsNavigator = () => {
+  return (
+    <StackNavigator.Navigator>
+      <StackNavigator.Screen
+        component={ChartsScreen}
+        name="Charts"
+        options={{header: Header}}
+      />
+    </StackNavigator.Navigator>
+  )
+}
+
 function App() {
   return (
     <Theme>
@@ -49,6 +62,14 @@ function App() {
             component={IconsNavigator}
             options={{
               drawerLabel: 'Icons',
+              drawerIcon: Icons.Bolt
+            }}
+          />
+          <Drawer.Screen
+            name="Charts"
+            component={ChartsNavigator}
+            options={{
+              drawerLabel: 'Charts',
               drawerIcon: Icons.Bolt
             }}
           />

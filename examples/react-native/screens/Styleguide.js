@@ -17,7 +17,8 @@ import {
   Image,
   Control,
   Icons,
-  Heading
+  Heading,
+  Speedometer
 } from '@vela/ui'
 import Surface from '@vela/ui/src/components/Surface'
 
@@ -27,22 +28,6 @@ function Styleguide({navigation}) {
     <Surface style={{flex: 1}}>
       <ScrollView style={{flex: 1}}>
         <Box>
-          <Spacer />
-          <Heading>Icons</Heading>
-          <Spacer />
-          <View
-            style={{
-              flexDirection: 'row',
-              flexWrap: 'wrap'
-            }}>
-            {Object.keys(Icons).map(key => {
-              const Icon = Icons[key]
-              return <Icon key={key} style={{margin: 16}} />
-            })}
-          </View>
-
-          <Spacer size="xl" />
-
           <Heading size="s">Image</Heading>
           <Spacer />
           <Image
