@@ -1,6 +1,5 @@
-import React, {useSTate, useState, useEffect} from "react"
-import { View } from "react-native"
-import {Box, Speedometer} from "@vela/ui"
+import React, {useState, useEffect} from 'react'
+import {Screen, Box, Speedometer} from '@vela/ui'
 
 export default function Charts() {
   const [speed, setSpeed] = useState(0)
@@ -9,9 +8,12 @@ export default function Charts() {
       setSpeed(Math.floor(Math.random() * 10))
     }, 1000)
   }, [])
+
   return (
-    <Box>
+    <Screen>
+      <Box>
         <Speedometer speed={speed} />
-    </Box>
+      </Box>
+    </Screen>
   )
 }

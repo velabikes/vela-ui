@@ -1,7 +1,6 @@
 import React from 'react'
-import {Icons, Box, Heading, Paragraph, Spacer} from '@vela/ui'
+import {Icons, Box, Heading, Paragraph, Spacer, Screen} from '@vela/ui'
 import {View, ScrollView} from 'react-native'
-import Surface from '@vela/ui/src/components/Surface'
 
 function IconDisplay({iconName}) {
   const Icon = Icons[iconName]
@@ -24,7 +23,7 @@ function IconDisplay({iconName}) {
 
 export default function IconsScreen() {
   return (
-    <Surface>
+    <Screen>
       <ScrollView>
         <Box>
           <Heading>Usage</Heading>
@@ -58,6 +57,6 @@ export default function IconsScreen() {
           <Spacer />
         </Box>
       </ScrollView>
-    </Surface>
+    </Screen>
   )
 }

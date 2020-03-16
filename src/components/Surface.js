@@ -4,8 +4,6 @@ import {useTheme} from '../lib/theme'
 
 export default function Surface({children, style, ...props}) {
   const {colors} = useTheme()
-  const baseStyle = {
-    backgroundColor: colors.background,
-  }
-  return <View style={[baseStyle, style]} {...props}>{children}</View>
+  
+  return <View style={[style, {backgroundColor: 'transparent'}]} {...props}>{children}</View>
 }

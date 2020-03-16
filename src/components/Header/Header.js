@@ -4,6 +4,7 @@ import Box from "../Box";
 import HeaderMenuButton from "./HeaderMenuButton";
 import Heading from "../Heading";
 import Surface from "../Surface";
+import Backdrop from "../Backdrop";
 
 const boxStyle = {
   flexDirection: "row",
@@ -18,12 +19,19 @@ const titleStyle = {
   textAlign: "center"
 };
 
+const floatStyle = {
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: 0
+}
+
 export default function Header({ scene }) {
   const { options, navigation } = scene.descriptor;
   const title = options.title || scene.route.name;
 
   return (
-    <Surface>
+    <Backdrop>
       <SafeAreaView>
         <Box style={boxStyle}>
           <View style={segmentStyle}>
@@ -37,6 +45,6 @@ export default function Header({ scene }) {
           <View style={segmentStyle} />
         </Box>
       </SafeAreaView>
-    </Surface>
+    </Backdrop>
   );
 }

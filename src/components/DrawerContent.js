@@ -1,12 +1,12 @@
 import React from "react";
-import {SafeAreaView} from 'react-native'
+import { SafeAreaView } from "react-native";
 import DrawerItem from "./DrawerItem";
 import Box from "./Box";
-import Surface from "./Surface";
+import Backdrop from "./Backdrop";
 
 function DrawerContent({ navigation, state, descriptors }) {
   return (
-    <Surface style={{ flex: 1 }}>
+    <Backdrop style={{ flex: 1 }}>
       <SafeAreaView>
         <Box>
           {state.routes.map(route => {
@@ -22,7 +22,7 @@ function DrawerContent({ navigation, state, descriptors }) {
           })}
         </Box>
       </SafeAreaView>
-    </Surface>
+    </Backdrop>
   );
 }
 

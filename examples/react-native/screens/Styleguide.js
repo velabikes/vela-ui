@@ -18,15 +18,14 @@ import {
   Control,
   Icons,
   Heading,
-  Speedometer
+  Screen
 } from '@vela/ui'
-import Surface from '@vela/ui/src/components/Surface'
 
 function Styleguide({navigation}) {
   const [theme, setTheme] = useState('')
   return (
-    <Surface style={{flex: 1}}>
-      <ScrollView style={{flex: 1}}>
+    <Screen>
+      <ScrollView>
         <Box>
           <Heading size="s">Image</Heading>
           <Spacer />
@@ -225,7 +224,7 @@ function Styleguide({navigation}) {
           <Spacer size="xl" />
         </Box>
       </ScrollView>
-    </Surface>
+    </Screen>
   )
 }
 

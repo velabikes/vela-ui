@@ -10,6 +10,7 @@ import IconsScreen from './screens/Icons'
 import ChartsScreen from './screens/Charts'
 
 import {Icons, DrawerContent, Theme, Header} from '@vela/ui'
+import Surface from '../../src/components/Surface'
 
 const StackNavigator = createStackNavigator()
 const Drawer = createDrawerNavigator()
