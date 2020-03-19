@@ -7,16 +7,17 @@ import Spacer from './Spacer'
 import Footnote from './Footnote'
 
 function TextField({
-  field: {name, value},
+  field = {},
   placeholder,
-  form: {error, handleChange, handleBlur},
+  form ={},
   label
 }) {
   const {colors} = useTheme()
+  const {name, value} = field
+  const {error, handleChange, handleBlur} = form
   const baseErrorStyle = {
     color: colors.negative,
   }
-
   return (
     <View>
       <Label>{label || name}</Label>
@@ -24,8 +25,8 @@ function TextField({
       <TextInput
         error={error}
         placeholder={placeholder}
-        onChangeText={handleChange(name)}
-        onBlur={handleBlur(name)}
+        onChangeText={handleChange && handleChange(name)}
+        onBlur={handleChange && handleBlur(name)}
         value={value}
       />
       <Footnote style={baseErrorStyle}>{error}</Footnote>

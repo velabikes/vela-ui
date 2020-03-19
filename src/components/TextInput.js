@@ -18,7 +18,6 @@ function TextInput({style, error, ...props}) {
   const textStyle = {
     color: colors.text
   }
-  console.log(props)
   return (
     <BaseTextInput
       style={[baseStyle, style]}
