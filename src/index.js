@@ -1,33 +1,27 @@
-import DrawerItem from './components/DrawerItem'
-import Surface from './components/Surface'
-import Speedometer from './components/Speedometer'
-import Backdrop from './components/Backdrop'
-
-export Box from './components/Box'
-export Button from './components/Button'
-export Card from './components/Card'
-export Control from './components/Control'
-export Distance from './components/Distance'
-export Footnote from './components/Footnote'
-export Header from './components/Header/Header'
-export Heading from './components/Heading'
-export Icons from './components/Icons'
-export Image from './components/Image'
-export Label from './components/Label'
-export Link from './components/Link'
-export Paragraph from './components/Paragraph'
-export SelectInput from './components/SelectInput'
-export Spacer from './components/Spacer'
-export Subheading from './components/Subheading'
-export Tag from './components/Tag'
-export Text from './components/Text'
-export TextField from './components/TextField'
-export TextInput from './components/TextInput'
-export Theme from './components/Theme'
-export DrawerItem from './components/DrawerItem'
-export DrawerContent from './components/DrawerContent'
-export Surface from './components/Surface'
-export Speedometer from './components/Speedometer'
-export Screen from './components/Screen'
-export {useTheme} from './lib/theme'
-export Backdrop from './components/Backdrop'
+export {default as Surface} from "./components/Surface"
+export {default as Speedometer} from "./components/Speedometer"
+export {default as Card} from './components/Card'
+export {default as Backdrop} from "./components/Backdrop"
+export {default as Box} from "./components/Box"
+export {default as Button} from "./components/Button"
+export {default as Control} from "./components/Control"
+export {default as Distance} from "./components/Distance"
+export {default as Footnote} from "./components/Footnote"
+export {default as Header} from "./components/Header/Header"
+export {default as Heading} from "./components/Heading"
+export {default as Icons} from "./components/Icons"
+export {default as Image} from "./components/Image"
+export {default as Label} from "./components/Label"
+export {default as Link} from "./components/Link"
+export {default as Paragraph} from "./components/Paragraph"
+export {default as SelectInput} from "./components/SelectInput"
+export {default as Spacer} from "./components/Spacer"
+export {default as Subheading} from "./components/Subheading"
+export {default as Tag} from "./components/Tag"
+export {default as Text} from "./components/Text"
+export {default as TextField} from "./components/TextField"
+export {default as TextInput} from "./components/TextInput"
+export {default as Theme} from "./components/Theme"
+export {default as DrawerContent} from "./components/DrawerContent"
+export {default as Screen} from "./components/Screen"
+export {useTheme} from "./lib/theme"

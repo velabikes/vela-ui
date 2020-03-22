@@ -3,7 +3,6 @@ import { SafeAreaView, View } from "react-native";
 import Box from "../Box";
 import HeaderMenuButton from "./HeaderMenuButton";
 import Heading from "../Heading";
-import Surface from "../Surface";
 import Backdrop from "../Backdrop";
 
 const boxStyle = {
