@@ -1,13 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {TextInput as BaseTextInput} from 'react-native'
 import {useTheme} from '../lib/theme'
 
 function TextInput({style, error, ...props}) {
-  const [focus, setFocus] = useState(false)
   const {colors} = useTheme()
   const baseStyle = {
     padding: 12,
-    borderColor: error ? colors.negative : focus ? colors.link : colors.border,
+    borderColor: error ? colors.negative : colors.border,
     borderWidth: 1,
     borderRadius: 14,
     fontSize: 16,
@@ -21,8 +20,6 @@ function TextInput({style, error, ...props}) {
   return (
     <BaseTextInput
       style={[baseStyle, style]}
-      onFocus={() => setFocus(true)}
-      onBlur={() => setFocus(false)}
       placeholderTextColor={colors.placeholder}
       {...props}
     />

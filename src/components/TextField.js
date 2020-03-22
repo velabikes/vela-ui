@@ -10,7 +10,8 @@ function TextField({
   field = {},
   placeholder,
   form ={},
-  label
+  label,
+  ...props
 }) {
   const {colors} = useTheme()
   const {name, value} = field
@@ -28,6 +29,7 @@ function TextField({
         onChangeText={handleChange && handleChange(name)}
         onBlur={handleChange && handleBlur(name)}
         value={value}
+        {...props}
       />
       <Footnote style={baseErrorStyle}>{error}</Footnote>
       <Spacer size="s" />
