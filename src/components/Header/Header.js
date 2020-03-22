@@ -4,6 +4,7 @@ import Box from "../Box";
 import HeaderMenuButton from "./HeaderMenuButton";
 import Heading from "../Heading";
 import Backdrop from "../Backdrop";
+import HeaderBackButton from "./HeaderBackButton";
 
 const boxStyle = {
   flexDirection: "row",
@@ -25,7 +26,7 @@ const floatStyle = {
   top: 0
 }
 
-export default function Header({ scene }) {
+export default function Header({ scene, previous }) {
   const { options, navigation } = scene.descriptor;
   const title = options.title || scene.route.name;
 
@@ -34,7 +35,8 @@ export default function Header({ scene }) {
       <SafeAreaView>
         <Box style={boxStyle}>
           <View style={segmentStyle}>
-            { navigation && navigation.openDrawer && <HeaderMenuButton /> }
+            { navigation && navigation.openDrawer && <HeaderMenuButton navigation={navigation} /> }
+            { previous && <HeaderBackButton navigation={navigation} /> }
           </View>
           <View style={segmentStyle}>
             <Heading size="xs" style={titleStyle}>

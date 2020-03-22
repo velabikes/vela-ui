@@ -1,12 +1,10 @@
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { Icons } from "@vela/ui";
-//import { useNavigation } from "@react-navigation/native";
 
-export default function HeaderMenuButton() {
-  //const navigation = useNavigation();
+export default function HeaderMenuButton({navigation}) {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={navigation && navigation.openDrawer}>
       <Icons.Menu />
     </TouchableOpacity>
   );
