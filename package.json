@@ -34,7 +34,6 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
-    "@react-navigation/native": "^5.0.9",
     "react-native-masked-text": "^1.13.0"
   }
 }
