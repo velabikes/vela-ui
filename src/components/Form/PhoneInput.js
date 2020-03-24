@@ -1,4 +1,4 @@
-import TextInput from '../TextInput'
+import TextInput from './TextInput'
 import React from 'react'
 import { TextInputMask } from 'react-native-masked-text'
 

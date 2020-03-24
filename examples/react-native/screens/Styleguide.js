@@ -8,10 +8,8 @@ import {
   Spacer,
   Text,
   Button,
-  TextInput,
   Label,
   SelectInput,
-  TextField,
   Card,
   Box,
   Image,
@@ -64,30 +62,6 @@ function Styleguide({navigation}) {
           <Text>Text</Text>
           <Footnote>Footnote</Footnote>
           <Label>Label</Label>
-
-          <Spacer size="xl" />
-
-          <Heading size="s">Inputs</Heading>
-          <Spacer />
-          <TextInput placeholder="Placeholder" />
-          <Spacer size="s" />
-          <TextInput placeholder="Placeholder" error />
-          <Spacer size="s" />
-          <SelectInput placeholder="Placeholder" />
-
-          <Spacer />
-
-          <TextField label="Label" placeholder="Placeholder" />
-          <TextField
-            label="Label"
-            placeholder="Placeholder"
-            error="Error message"
-          />
-          <TextField
-            label="Label"
-            placeholder="Placeholder"
-            error="Error message"
-          />
 
           <Spacer size="xl" />
 
@@ -184,16 +158,6 @@ function Styleguide({navigation}) {
             </Paragraph>
             <Button label="Action" solid />
             <Button label="Skip" />
-          </Card>
-
-          <Spacer />
-
-          <Card>
-            <Heading>Form</Heading>
-            <Spacer size="s" />
-            <TextField label="Label" placeholder="Placeholder" />
-            <TextField label="Label" placeholder="Placeholder" />
-            <Button label="Submit" variant="primary" solid />
           </Card>
 
           <Spacer size="xl" />
