@@ -1,6 +1,6 @@
 import React from 'react'
 import {TextInput as BaseTextInput} from 'react-native'
-import {useTheme} from '../lib/theme'
+import {useTheme} from '../../lib/theme'
 
 function TextInput({style, error, ...props}) {
   const {colors} = useTheme()

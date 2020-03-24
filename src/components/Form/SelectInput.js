@@ -1,8 +1,8 @@
 import React from 'react'
 import {View} from 'react-native'
-import Text from './Text'
-import {Down} from './Icons'
-import {useTheme} from '../lib/theme'
+import Text from '@vela/ui/src/components/Text'
+import {Down} from '@vela/ui/src/components/Icons'
+import {useTheme} from '@vela/ui/src/lib/theme'
 
 function SelectInput({focus, placeholder, error, selected}) {
   const {colors} = useTheme()

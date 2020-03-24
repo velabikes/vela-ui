@@ -1,10 +1,10 @@
 import React from 'react'
 import {View} from 'react-native'
-import {useTheme} from '../lib/theme'
+import {useTheme} from '@vela/ui/src/lib/theme'
 import TextInput from './TextInput'
-import Label from './Label'
-import Spacer from './Spacer'
-import Footnote from './Footnote'
+import Label from '@vela/ui/src/components/Label'
+import Spacer from '@vela/ui/src/components/Spacer'
+import Footnote from '@vela/ui/src/components/Footnote'
 
 function TextField({
   field = {},
