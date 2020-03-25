@@ -6,8 +6,9 @@ function Footnote({children, style}) {
   const {colors} = useTheme()
   const baseStyle = {
     fontSize: 13,
+    minHeight: 16,
     color: colors.footnote,
-    fontWeight: '600'
+    fontWeight: '600',
   }
 
   return <Text style={[baseStyle, style]}>{children}</Text>
