@@ -8,7 +8,7 @@ const validateEmail = value => {
   if (!emailRegex.test(value)) return "Email invalido.";
 };
 
-export default PhoneField = props => (
+export default props => (
   <FieldBase
     {...props}
     input={TextInput}

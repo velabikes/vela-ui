@@ -8,13 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@vela/ui": "file:../../",
+    "@vela/ui": "../../",
     "@weco/next-plugin-transpile-modules": "^2.2.1",
     "next": "9.3.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-native": "^0.61.5",
     "react-native-appearance": "^0.3.3",
+    "react-native-svg-web": "^1.0.1",
     "react-native-web": "^0.12.2"
   },
   "devDependencies": {

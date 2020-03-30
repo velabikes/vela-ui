@@ -3,10 +3,10 @@ import {
     Screen,
     Box,
     TextField,
-    PhoneField
+    PhoneField,
+    EmailField
   } from '@vela/ui'
   import { Formik } from 'formik'
-import EmailField from '../../../src/components/Form/EmailField'
 
 const initialValues = {TextField: '', PhoneField: '', EmailField: ''}
 

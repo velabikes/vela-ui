@@ -2,7 +2,7 @@ import TextInput from './TextInput'
 import React from 'react'
 import { TextInputMask } from 'react-native-masked-text'
 
-export default PhoneInput = props => (
+export default props => (
   <TextInputMask
     type={"cel-phone"}
     options={{

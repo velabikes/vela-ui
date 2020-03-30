@@ -6,5 +6,5 @@ const validatePhone = value => {
   if (value.length < 14) return 'Telefone incompleto.'
 }
 
-export default PhoneField = props =>
+export default props =>
   <FieldBase {...props} input={PhoneInput} validate={validatePhone} />

@@ -1,6 +1,6 @@
 {
   "name": "@vela/ui",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Vela React UI Toolkit",
   "main": "src/index.js",
   "directories": {
@@ -22,7 +22,6 @@
   "peerDependencies": {
     "react": "^16.12.0",
     "react-native": "^0.61.5",
-    "react-native-appearance": "^0.3.1",
     "react-native-svg": "^9.13.6"
   },
   "devDependencies": {

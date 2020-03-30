@@ -13,7 +13,7 @@ const sizeStyles = {
 
 const Text = ({children, style, size, ...props}) => {
   const {colors} = useTheme()
-  const sizeStyle = sizeStyles[size || 'm']
+  const sizeStyle = sizeStyles['m']//[size || 'm']
 
   const baseStyle = {
     fontWeight: '500',

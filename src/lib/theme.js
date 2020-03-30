@@ -1,16 +1,10 @@
 import {createContext, useContext} from 'react'
-import { Appearance, useColorScheme } from 'react-native-appearance'
 
-export const ThemeContext = createContext(Appearance.getColorScheme())
-
-const subscription = Appearance.addChangeListener(({ colorScheme }) => {
-  alert(colorScheme)
-});
+export const ThemeContext = createContext('light')
 
 export function useTheme() {
-  const schemeValue = useColorScheme()
   const themeValue = useContext(ThemeContext)
-  return themes[themeValue] || themes[schemeValue] || themes.light
+  return themes[themeValue]
 }
 
 const metrics = {
