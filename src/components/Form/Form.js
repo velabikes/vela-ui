@@ -1,5 +1,5 @@
-import {Formik, Form} from 'formik'
+import {Formik, Form as FormikForm} from 'formik'
 
-const Form = ({children, ...props}) => <Formik {...props}><Form>{children}</Form></Formik>
+const Form = ({children, ...props}) => <Formik {...props}><FormikForm>{children}</FormikForm></Formik>
 
 export default Form
