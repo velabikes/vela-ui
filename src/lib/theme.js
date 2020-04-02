@@ -7,6 +7,14 @@ export function useTheme() {
   return themes[themeValue]
 }
 
+const margin = {
+  xsmall: '1px',
+  small: '2px',
+  medium: '4px',
+  large: '12px',
+  xlarge: '24px'
+}
+
 const metrics = {
   padding: 24,
   text: 14
@@ -31,7 +39,8 @@ const themes = {
       disabled: '#D6D4D4',
       cta: "#FF6574"
     },
-    metrics
+    metrics,
+    margin
   },
   dark: {
     colors: {
@@ -51,6 +60,7 @@ const themes = {
       disabled: '#4B4A4A',
       cta: '#FB9199'
     },
-    metrics
+    metrics,
+    margin
   }
 }
