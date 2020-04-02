@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import {Paragraph, Card, TextField, Heading, Box, Screen, Form, Button} from '@vela/ui'
+import {Paragraph, Card, PhoneField, Heading, Box, Screen, Form, Button} from '@vela/ui'
 
 const Home = () => (
   <Screen>
@@ -14,7 +14,7 @@ const Home = () => (
         <Paragraph>asdf</Paragraph>
       </Card>
       <Form initialValues={{text: 'text'}}>
-        <TextField name='text' />
+        <PhoneField name='text' />
         <Button label='Submit' />
       </Form>
     </Box>
