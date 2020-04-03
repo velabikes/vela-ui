@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView } from "react-native";
 import DrawerItem from "./DrawerItem";
-import Box from "./Box";
+import Box from "./Primitives/Box";
 import Backdrop from "./Backdrop";
 
 function DrawerContent({ navigation, state, descriptors }) {

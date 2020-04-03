@@ -1,6 +1,6 @@
 import React from "./node_modules/react";
 import { SafeAreaView, View } from "react-native";
-import Box from "../Box";
+import Box from "../Primitives/Box";
 import HeaderMenuButton from "./NavbarMenuButton";
 import Heading from "../Heading";
 import Backdrop from "../Backdrop";

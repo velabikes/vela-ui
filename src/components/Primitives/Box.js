@@ -1,6 +1,6 @@
 import React from "react"
-import Surface from "./Surface"
-import { useTheme } from "../lib/theme"
+import Surface from "../Surface"
+import { useTheme } from "../../lib/theme"
 
 const FLEX_MAP = {
   [true]: '1 1',

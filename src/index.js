@@ -2,7 +2,7 @@ export {default as Surface} from "./components/Surface"
 export {default as Speedometer} from "./components/Speedometer"
 export {default as Card} from './components/Card'
 export {default as Backdrop} from "./components/Backdrop"
-export {default as Box} from "./components/Box"
+export {default as Box} from "./components/Primitives/Box"
 export {default as Button} from "./components/Button"
 export {default as Control} from "./components/Control"
 export {default as Distance} from "./components/Distance"
