@@ -1,7 +1,7 @@
-import React from "react";
+import React from "./node_modules/react";
 import { SafeAreaView, View } from "react-native";
 import Box from "../Box";
-import HeaderMenuButton from "./HeaderMenuButton";
+import HeaderMenuButton from "./NavbarMenuButton";
 import Heading from "../Heading";
 import Backdrop from "../Backdrop";
 import HeaderBackButton from "./HeaderBackButton";
@@ -26,7 +26,7 @@ const floatStyle = {
   top: 0
 }
 
-export default function Header({ scene, previous }) {
+export default function Navbar({ scene, previous }) {
   const { options, navigation } = scene.descriptor;
   const title = options.title || scene.route.name;
 
