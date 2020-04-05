@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import { useTheme } from '../../lib/theme'
 import Label from "../Label";
 import Spacer from "../Spacer";
-import Footnote from "../Footnote";
+import Footnote from "../Typo/Footnote";
 
 const FieldBase = ({
   field = {},

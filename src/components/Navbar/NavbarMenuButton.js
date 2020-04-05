@@ -1,6 +1,6 @@
-import React from "./node_modules/react";
+import React from "react";
 import { TouchableOpacity } from "react-native";
-import { Icons } from "./node_modules/@vela/ui";
+import Icons from "../Icons";
 
 export default function NavbarMenuButton({navigation}) {
   return (

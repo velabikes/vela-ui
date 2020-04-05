@@ -1,10 +1,10 @@
-import React from "./node_modules/react";
+import React from "react";
 import { SafeAreaView, View } from "react-native";
-import Box from "../Primitives/Box";
+import Box from "../Box";
 import HeaderMenuButton from "./NavbarMenuButton";
-import Heading from "../Heading";
+import HeaderBackButton from "./NavbarBackButton";
+import Heading from "../Typo/Heading";
 import Backdrop from "../Backdrop";
-import HeaderBackButton from "./HeaderBackButton";
 
 const boxStyle = {
   flexDirection: "row",
