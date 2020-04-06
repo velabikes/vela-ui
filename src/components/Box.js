@@ -40,7 +40,6 @@ const Box = ({
   ...props
 }) => {
   const { margin, colors } = useTheme();
-  const 
   const baseStyle = {
     display: 'flex',
     flex: FLEX_MAP[flex] || 'auto',
