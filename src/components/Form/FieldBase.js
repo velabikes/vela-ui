@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 import {View} from "react-native"
-import { Field } from 'formik';
+import { Field } from 'formik'
 import { useTheme } from '../../lib/theme'
-import Label from "../Label";
-import Spacer from "../Spacer";
-import Footnote from "../Typo/Footnote";
+import Label from "../Label"
+import Spacer from "../Spacer"
+import Footnote from "../Typo/Footnote"
 
 const FieldBase = ({
   field = {},
@@ -13,16 +13,15 @@ const FieldBase = ({
   input,
   ...props
 }) => {
-  const { colors } = useTheme();
-  const { name, value } = field;
-  const { errors, touched, handleChange, handleBlur } = form;
+  const { colors } = useTheme()
+  const { name, value } = field
+  const { errors, touched, handleChange, handleBlur } = form
   const error = errors && errors[name]
   const hasTouched = touched && touched[name]
   const Input = input;
   const baseErrorStyle = {
     color: colors.negative
-  };
-  console.log(touched)
+  }
   return (
     <View>
       <Label>{label || name}</Label>
