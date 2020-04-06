@@ -29,7 +29,7 @@ const JUSTIFY_MAP = {
 const Box = ({
   children,
   style,
-  pad,
+  pad = 0,
   flex,
   direction,
   justify,
@@ -40,13 +40,17 @@ const Box = ({
   ...props
 }) => {
   const { margin, colors } = useTheme();
+  const 
   const baseStyle = {
     display: 'flex',
     flex: FLEX_MAP[flex] || 'auto',
     flexDirection: direction || 'column',
     justifyContent: JUSTIFY_MAP[justify] || 'flex-start',
     alignItems: ALIGN_MAP[align] || 'flex-start',
-    padding: margin[pad] || 0,
+    paddingRight:  margin[pad] || margin[pad.right] || margin[pad.horizontal],
+    paddingLeft:  margin[pad] || margin[pad.left] || margin[pad.horizontal],
+    paddingTop:  margin[pad] || margin[pad.top] || margin[pad.vertical],
+    paddingBottom:  margin[pad] || margin[pad.bottom] || margin[pad.vertical],
     background: colors[background] || 'transparent',
     shadowColor: "#000",
     shadowOffset: {
