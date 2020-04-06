@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import {Paragraph, Card, PhoneField, Heading, Box, Screen, Form, Button} from '@vela/ui'
+import {Paragraph, Card, PhoneField, Heading, Box, Form, Button} from '@vela/ui'
 
 const Home = () => (
-  <Screen>
+  <Box pad="medium">
     <Head>
       <title>Create Next App</title>
       <link rel="icon" href="/favicon.ico" />
@@ -18,7 +18,7 @@ const Home = () => (
         <Button label='Submit' />
       </Form>
     </Box>
-  </Screen>
+  </Box>
 )
 
 export default Home
