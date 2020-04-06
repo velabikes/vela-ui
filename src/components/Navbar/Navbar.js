@@ -4,7 +4,6 @@ import Box from "../Box";
 import HeaderMenuButton from "./NavbarMenuButton";
 import HeaderBackButton from "./NavbarBackButton";
 import Heading from "../Typo/Heading";
-import Backdrop from "../Backdrop";
 
 const boxStyle = {
   flexDirection: "row",
@@ -31,7 +30,7 @@ export default function Navbar({ scene, previous }) {
   const title = options.title || scene.route.name;
 
   return (
-    <Backdrop>
+    <Box>
       <SafeAreaView>
         <Box style={boxStyle}>
           <View style={segmentStyle}>
@@ -46,6 +45,6 @@ export default function Navbar({ scene, previous }) {
           <View style={segmentStyle} />
         </Box>
       </SafeAreaView>
-    </Backdrop>
+    </Box>
   );
 }
