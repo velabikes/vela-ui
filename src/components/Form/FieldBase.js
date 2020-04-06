@@ -8,7 +8,6 @@ import Footnote from "../Typo/Footnote";
 
 const FieldBase = ({
   field = {},
-  placeholder,
   form = {},
   label,
   input,

@@ -2,7 +2,7 @@ import React from 'react'
 import {Text} from 'react-native'
 import { useTheme } from '../lib/theme'
 
-export default function Anchor({children, onPress, style}) {
+export default function Anchor({label, onPress, style}) {
   const {colors} = useTheme()
   const TextStyle = {
     color: colors.anchor,
@@ -11,7 +11,7 @@ export default function Anchor({children, onPress, style}) {
 
   return (
     <Text onPress={onPress} style={[TextStyle, style]}>
-      {children}
+      {label}
     </Text>
   )
 }
