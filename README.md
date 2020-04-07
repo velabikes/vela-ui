@@ -9,11 +9,18 @@ Vela React Components Toolkit
 ## Loacal Development
 
 ### React Native
-`npm install`
-`cd examples/react-native/`
-`npm install`
-`react-native link`
-`react-native run-[platform]`
+```
+npm install
+cd examples/react-native/
+npm install
+react-native link
+react-native run-[platform]
+```
 
 ### Next
-`TBD`
+```
+npm install
+cd examples/next/
+npm install
+npm run dev
+```
