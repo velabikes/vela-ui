@@ -3,7 +3,7 @@ import {View} from "react-native"
 import { Field } from 'formik'
 import { useTheme } from '../../lib/theme'
 import Label from "../Label"
-import Spacer from "../Spacer"
+import Spacer from "../Gap"
 import Footnote from "../Typo/Footnote"
 
 const FieldBase = ({

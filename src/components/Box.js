@@ -1,6 +1,7 @@
 import React, {Children} from "react"
 import {View} from "react-native"
 import { useTheme } from "../lib/theme"
+import { Spacer } from ".."
 
 const FLEX_MAP = {
   [true]: '1 1',
@@ -45,7 +46,7 @@ const Box = ({
     flex: FLEX_MAP[flex] || 'auto',
     flexDirection: direction || 'column',
     justifyContent: JUSTIFY_MAP[justify] || 'flex-start',
-    alignItems: ALIGN_MAP[align] || 'flex-start',
+    alignItems: ALIGN_MAP[align] || 'stretch',
     paddingRight:  margin[pad] || margin[pad.right] || margin[pad.horizontal],
     paddingLeft:  margin[pad] || margin[pad.left] || margin[pad.horizontal],
     paddingTop:  margin[pad] || margin[pad.top] || margin[pad.vertical],
@@ -66,7 +67,7 @@ const Box = ({
     contents = []
     Children.forEach(children, (child, index) => {
       contents.push(child)
-      contents.push(<View></View>)
+      contents.push(<Spacer size={gap} />)
     })
   }
 

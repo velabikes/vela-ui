@@ -11,14 +11,15 @@ const sizeStyles = {
   }
 }
 
-const Text = ({children, style, size, ...props}) => {
+const Text = ({children, style, size, textAlign, ...props}) => {
   const {colors} = useTheme()
   const sizeStyle = sizeStyles['m']//[size || 'm']
 
   const baseStyle = {
     fontWeight: '500',
     color: colors.text,
-    fontFamily: 'Barlow'
+    fontFamily: 'Barlow',
+    textAlign: textAlign || 'start'
   }
   return (
     <RNText style={[baseStyle, sizeStyle, style]} {...props}>
