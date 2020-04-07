@@ -1,7 +1,7 @@
 import {Paragraph, PhoneField, Heading, Box, Form, Button, Anchor} from '@vela/ui'
 
 const Home = () => (
-  <Box pad="medium" align="center" justify='center' flex={true}>
+  <Box align="center" justify='center' flex>
     <Box gap pad="large" elevation={2}>
       <Heading>Sign-In</Heading>
       <Form initialValues={{text: 'text'}}>
