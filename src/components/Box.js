@@ -5,7 +5,7 @@ import { Spacer } from ".."
 
 const FLEX_MAP = {
   [true]: 1,
-  [false]: 1,
+  [false]: 0,
   grow: '1 0',
   shrink: '0 1',
 }
@@ -43,7 +43,7 @@ const Box = ({
   const { margin, colors } = useTheme();
   const baseStyle = {
     display: 'flex',
-    flex: FLEX_MAP[flex] || 'auto',
+    flex: FLEX_MAP[flex] || 0,
     flexDirection: direction || 'column',
     justifyContent: JUSTIFY_MAP[justify] || 'flex-start',
     alignItems: ALIGN_MAP[align] || 'stretch',
