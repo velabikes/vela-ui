@@ -4,8 +4,8 @@ import { useTheme } from "../lib/theme"
 import { Spacer } from ".."
 
 const FLEX_MAP = {
-  [true]: '1 1',
-  [false]: '0 0',
+  [true]: 1,
+  [false]: 1,
   grow: '1 0',
   shrink: '0 1',
 }

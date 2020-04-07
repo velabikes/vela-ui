@@ -1,10 +1,10 @@
 import React from "react"
-import {View} from "react-native"
 import { Field } from 'formik'
 import { useTheme } from '../../lib/theme'
 import Label from "../Label"
 import Spacer from "../Gap"
 import Footnote from "../Typo/Footnote"
+import Box from "../Box"
 
 const FieldBase = ({
   field = {},
@@ -23,9 +23,9 @@ const FieldBase = ({
     color: colors.negative
   }
   return (
-    <View>
+    <Box>
       <Label>{label || name}</Label>
-      <Spacer size="xs" />
+      <Spacer size="small" />
       <Input
         value={value}
         onChangeText={handleChange(name)}
@@ -34,8 +34,7 @@ const FieldBase = ({
         {...props}
       />
       <Footnote style={baseErrorStyle}>{hasTouched && error}</Footnote>
-      <Spacer size="s" />
-    </View>
+    </Box>
   );
 };
 
