@@ -19,7 +19,7 @@ const Text = ({children, style, size, textAlign, ...props}) => {
     fontWeight: '500',
     color: colors.text,
     fontFamily: 'Barlow',
-    textAlign: textAlign || 'start'
+    textAlign: textAlign || 'left'
   }
   return (
     <RNText style={[baseStyle, sizeStyle, style]} {...props}>

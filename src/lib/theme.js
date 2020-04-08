@@ -68,11 +68,11 @@ const theme = ({ variant, breakpoint }) => {
   const baseFontSize = FONTSIZE_MAP[breakpoint]
 
   const margin = {
-    xsmall: `${baseSpacing / 8}px`,
-    small: `${baseSpacing / 4}px`,
-    medium: `${baseSpacing / 2}px`,
-    large: `${baseSpacing}px`,
-    xlarge: `${baseSpacing * 2}px`
+    xsmall: baseSpacing / 8,
+    small: baseSpacing / 4,
+    medium: baseSpacing / 2,
+    large: baseSpacing,
+    xlarge: baseSpacing * 2
   }
 
   const colors = COLOR_MAP[variant]

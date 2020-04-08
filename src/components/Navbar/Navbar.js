@@ -5,11 +5,6 @@ import HeaderMenuButton from "./NavbarMenuButton";
 import HeaderBackButton from "./NavbarBackButton";
 import Heading from "../Typo/Heading";
 
-const boxStyle = {
-  flexDirection: "row",
-  alignItems: "center"
-};
-
 const segmentStyle = {
   flex: 1
 };
@@ -32,7 +27,7 @@ export default function Navbar({ scene, previous }) {
   return (
     <Box>
       <SafeAreaView>
-        <Box style={boxStyle}>
+        <Box pad="large" direction="row" align="center">
           <View style={segmentStyle}>
             { navigation && navigation.openDrawer && <HeaderMenuButton navigation={navigation} /> }
             { previous && <HeaderBackButton navigation={navigation} /> }

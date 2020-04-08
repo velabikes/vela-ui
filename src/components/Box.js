@@ -34,6 +34,8 @@ const Box = ({
   flex,
   direction,
   justify,
+  maxWidth,
+  maxHeight,
   align,
   elevation = 0,
   background,
@@ -51,6 +53,8 @@ const Box = ({
     paddingLeft:  margin[pad] || margin[pad.left] || margin[pad.horizontal],
     paddingTop:  margin[pad] || margin[pad.top] || margin[pad.vertical],
     paddingBottom:  margin[pad] || margin[pad.bottom] || margin[pad.vertical],
+    maxWidth,
+    maxHeight,
     background: colors[background] || 'transparent',
     shadowColor: "#000",
     shadowOffset: {
