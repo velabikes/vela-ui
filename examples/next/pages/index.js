@@ -6,7 +6,8 @@ import {
   Form,
   Button,
   Anchor,
-  Text
+  Text,
+  Switch,
 } from "@vela/ui";
 import { useState, useEffect } from "react";
 
@@ -25,6 +26,7 @@ const Home = () => {
         <Form initialValues={{ text: "text" }}>
           <PhoneField name="text" label="Email" />
           <PhoneField name="text" label="Password" />
+          <Switch name="keep" label="Keep signed in" toggleSwitch={() => alert('test')} />
           <Button label="Submit" solid variant="primary" />
         </Form>
         <Anchor label="Forgot password?" textAlign="center" />
