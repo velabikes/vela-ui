@@ -25,7 +25,7 @@ export default function Navbar({ scene, previous }) {
   const title = options.title || scene.route.name;
 
   return (
-    <Box>
+    <Box background='foreground'>
       <SafeAreaView>
         <Box pad="large" direction="row" align="center">
           <View style={segmentStyle}>

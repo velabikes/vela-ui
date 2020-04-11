@@ -38,6 +38,7 @@ const Box = ({
   maxHeight,
   align,
   elevation = 0,
+  round,
   background,
   gap,
   ...props
@@ -53,9 +54,10 @@ const Box = ({
     paddingLeft:  margin[pad] || margin[pad.left] || margin[pad.horizontal],
     paddingTop:  margin[pad] || margin[pad.top] || margin[pad.vertical],
     paddingBottom:  margin[pad] || margin[pad.bottom] || margin[pad.vertical],
+    borderRadius: margin[round],
     maxWidth,
     maxHeight,
-    background: colors[background] || 'transparent',
+    backgroundColor: colors[background] || 'transparent',
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -71,7 +73,7 @@ const Box = ({
     contents = []
     Children.forEach(children, (child, index) => {
       contents.push(child)
-      contents.push(<Spacer size={gap} />)
+      contents.push(<Spacer size={gap} ket={`gap-${index}`}/>)
     })
   }
 

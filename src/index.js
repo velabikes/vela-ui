@@ -29,4 +29,6 @@ export {default as PhoneField} from "./components/Form/PhoneField"
 export {default as EmailField} from "./components/Form/EmailField"
 export {default as SelectInput} from "./components/Form/SelectInput"
 
+export {default as LiveSpline} from "./components/charts/LiveSpline"
+
 export {useTheme} from "./lib/theme"

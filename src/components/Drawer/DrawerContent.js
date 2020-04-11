@@ -5,9 +5,9 @@ import Box from "../Box";
 
 function DrawerContent({ navigation, state, descriptors }) {
   return (
-    <Box style={{ flex: 1 }}>
+    <Box flex background='foreground'>
       <SafeAreaView>
-        <Box>
+        <Box pad="large">
           {state.routes.map(route => {
             const { drawerLabel, drawerIcon } = descriptors[route.key].options;
             return (
