@@ -92,7 +92,7 @@ const widhtToBreakpoint = width => {
 }
 
 export function useTheme() {
-  const variant = useContext(ThemeContext)
+  const variant = useContext(ThemeContext) || "light"
   const {width} = useWindowDimensions()
   const breakpoint = widhtToBreakpoint(width)
 
