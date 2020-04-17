@@ -1,5 +1,5 @@
 import React, {Children} from "react"
-import {View} from "react-native"
+import {View, TouchableOpacity} from "react-native"
 import { useTheme } from "../lib/theme"
 import { Gap } from ".."
 
@@ -41,9 +41,12 @@ const Box = ({
   round,
   background,
   gap,
+  height,
+  width,
+  onPress,
   ...props
 }) => {
-  const { margin, colors } = useTheme();
+  const { margin, colors, layout } = useTheme();
   const baseStyle = {
     display: 'flex',
     flex: FLEX_MAP[flex] || 0,
@@ -54,9 +57,11 @@ const Box = ({
     paddingLeft:  margin[pad] || margin[pad.left] || margin[pad.horizontal],
     paddingTop:  margin[pad] || margin[pad.top] || margin[pad.vertical],
     paddingBottom:  margin[pad] || margin[pad.bottom] || margin[pad.vertical],
-    borderRadius: margin[round],
+    borderRadius: margin[round] || round,
     maxWidth,
     maxHeight,
+    height: layout[height] || height,
+    width: layout[width] || width,
     backgroundColor: colors[background] || 'transparent',
     shadowColor: "#000",
     shadowOffset: {
@@ -77,10 +82,12 @@ const Box = ({
     })
   }
 
+  const Component = onPress ? TouchableOpacity : View
+
   return (
-    <View style={[baseStyle, style]} {...props}>
+    <Component style={[baseStyle, style]} onPress={onPress} {...props}>
       {contents}
-    </View>
+    </Component>
   )
 }
 

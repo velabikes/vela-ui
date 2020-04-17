@@ -67,6 +67,14 @@ const theme = ({ variant, breakpoint }) => {
   const baseSpacing = SPACING_MAP[breakpoint]
   const baseFontSize = FONTSIZE_MAP[breakpoint]
 
+  const layout = {
+    xsmall: baseSpacing * 5,
+    small: baseSpacing * 8,
+    medium: baseSpacing * 16,
+    large: baseSpacing * 32,
+    xlarge: baseSpacing * 48
+  }
+
   const margin = {
     xsmall: baseSpacing / 8,
     small: baseSpacing / 4,
@@ -108,6 +116,7 @@ const theme = ({ variant, breakpoint }) => {
     baseSpacing,
     baseFontSize,
     margin,
+    layout,
     colors,
     typo: {
       text,
