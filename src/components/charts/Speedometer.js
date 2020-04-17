@@ -24,7 +24,7 @@ export default function Speedometer({speed = 0}) {
   return (
     <>
     <View style={containerStyle}>
-      <View style={viewStyle}><LiveSpline current={speed} interval={1000} /></View>
+      {/* <View style={viewStyle}><LiveSpline current={speed} interval={1000} /></View> */}
       <Heading style={textStyle}>{speed}</Heading>
       <Subheading style={textStyle}>km/h</Subheading>
     </View>

@@ -6,7 +6,7 @@ function Heading({children, style, size}) {
   const {typo: {subheading}} = useTheme()
 
   return (
-    <Text size={subheading.size[size] || size || subheading.size.medium} weight='500'>{children}</Text>
+    <Text size={subheading.size[size] || size || subheading.size.medium} weight='600'>{children}</Text>
   )
 }
 

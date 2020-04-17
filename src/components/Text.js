@@ -12,7 +12,7 @@ const Text = ({children, style, size, weight, textAlign, ...props}) => {
     fontFamily: 'Barlow',
     textAlign: textAlign || 'left',
     fontSize: text.size[size] || size || text.size.medium,
-    fontWeight: weight || '500'
+    fontWeight: weight || '400'
   }
   return (
     <RNText style={[baseStyle, style]} {...props}>
