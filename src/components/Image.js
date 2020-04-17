@@ -5,7 +5,6 @@ import {useTheme} from '../lib/theme'
 function Image({style, loading, round, ...props}) {
   const {colors} = useTheme()
   const baseContainerStyle = {
-    backgroundColor: colors.border,
     ...(round && {borderRadius: 32}),
     overflow: 'hidden'
   }
@@ -15,7 +14,9 @@ function Image({style, loading, round, ...props}) {
     height: '100%'
   }
   const baseStyle = {
-    flex: 1
+    flex: 1,
+    width: '100%',
+    resizeMode: 'contain'
   }
   return (
     <View style={[baseContainerStyle, style]}>

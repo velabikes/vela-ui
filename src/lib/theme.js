@@ -20,12 +20,6 @@ const BREAKPOINT_MAP = {
   large: 1366
 }
 
-const PALLETE = {
-  coral: '#123123',
-  charcoral: '#123123',
-  midnight: '#123123'
-}
-
 const COLOR_MAP = {
   light: {
     background: '#EFEFEF',
@@ -42,7 +36,10 @@ const COLOR_MAP = {
     secondary: '#4FD4F0',
     negative: '#E52B1F',
     disabled: '#D6D4D4',
-    cta: "#FF6574"
+    cta: "#FF6574",
+    charge: '#EF2248',
+    alert: '#E52B1F',
+    warning: '#FFAF2D'
   },
   dark: {
     background: '#2D2D2D',
@@ -59,7 +56,10 @@ const COLOR_MAP = {
     secondary: '#4FD4F0',
     negative: '#FA4242',
     disabled: '#4B4A4A',
-    cta: '#FB9199'
+    cta: '#FF6574',
+    charge: '#FB9199',
+    alert: '#FC837B',
+    warning: '#FFD859'
   }
 }
 
