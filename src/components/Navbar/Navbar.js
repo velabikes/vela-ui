@@ -33,7 +33,7 @@ export default function Navbar({ scene, previous }) {
             { previous && <HeaderBackButton navigation={navigation} /> }
           </View>
           <View style={segmentStyle}>
-            <Heading size="xs" style={titleStyle}>
+            <Heading size="small" style={titleStyle}>
               {title}
             </Heading>
           </View>

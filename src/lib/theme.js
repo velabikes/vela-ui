@@ -77,11 +77,43 @@ const theme = ({ variant, breakpoint }) => {
 
   const colors = COLOR_MAP[variant]
 
+  const text = {
+    size: {
+      xsmall: baseFontSize * 0.6875,
+      small: baseFontSize * 0.875,
+      medium: baseFontSize,
+      large: baseFontSize * 1.125,
+      xlarge: baseFontSize * 1.5,
+      xxlarge: baseFontSize * 2
+    }
+  }
+
+  const heading = {
+    size: {
+      small: text.size.large,
+      medium: text.size.xlarge,
+      large: text.size.xxlarge,
+    }
+  }
+
+  const subheading = {
+    size: {
+      small: text.size.medium,
+      medium: text.size.large,
+      large: text.size.xlarge,
+    }
+  }
+
   return {
     baseSpacing,
     baseFontSize,
     margin,
-    colors
+    colors,
+    typo: {
+      text,
+      heading,
+      subheading
+    }
   }
 }
 

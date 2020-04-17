@@ -1,7 +1,7 @@
 import React, {Children} from "react"
 import {View} from "react-native"
 import { useTheme } from "../lib/theme"
-import { Spacer } from ".."
+import { Gap } from ".."
 
 const FLEX_MAP = {
   [true]: 1,
@@ -73,7 +73,7 @@ const Box = ({
     contents = []
     Children.forEach(children, (child, index) => {
       contents.push(child)
-      contents.push(<Spacer size={gap} ket={`gap-${index}`}/>)
+      contents.push(<Gap size={gap} ket={`gap-${index}`}/>)
     })
   }
 
