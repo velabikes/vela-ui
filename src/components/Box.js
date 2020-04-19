@@ -63,14 +63,16 @@ const Box = ({
     height: layout[height] || height,
     width: layout[width] || width,
     backgroundColor: colors[background] || 'transparent',
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: Math.round(elevation * 0.42857 + 0.142857),
-    },
-    shadowOpacity: 0.16 + elevation * 0.02,
-    shadowRadius: Math.round(0.647 * elevation + 0.237),
-    elevation: elevation,
+    ...(elevation && {
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: Math.round(elevation * 0.42857 + 0.142857),
+      },
+      shadowOpacity: 0.16 + elevation * 0.02,
+      shadowRadius: Math.round(0.647 * elevation + 0.237),
+      elevation: elevation,
+    })
   }
 
   let contents = children
