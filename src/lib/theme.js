@@ -20,12 +20,6 @@ const BREAKPOINT_MAP = {
   large: 1366
 }
 
-const PALLETE = {
-  coral: '#123123',
-  charcoral: '#123123',
-  midnight: '#123123'
-}
-
 const COLOR_MAP = {
   light: {
     background: '#EFEFEF',
@@ -42,7 +36,10 @@ const COLOR_MAP = {
     secondary: '#4FD4F0',
     negative: '#E52B1F',
     disabled: '#D6D4D4',
-    cta: "#FF6574"
+    cta: "#FF6574",
+    charge: '#EF2248',
+    alert: '#E52B1F',
+    warning: '#FFAF2D'
   },
   dark: {
     background: '#2D2D2D',
@@ -59,13 +56,24 @@ const COLOR_MAP = {
     secondary: '#4FD4F0',
     negative: '#FA4242',
     disabled: '#4B4A4A',
-    cta: '#FB9199'
+    cta: '#FF6574',
+    charge: '#FB9199',
+    alert: '#FC837B',
+    warning: '#FFD859'
   }
 }
 
 const theme = ({ variant, breakpoint }) => {
   const baseSpacing = SPACING_MAP[breakpoint]
   const baseFontSize = FONTSIZE_MAP[breakpoint]
+
+  const layout = {
+    xsmall: baseSpacing * 5,
+    small: baseSpacing * 8,
+    medium: baseSpacing * 16,
+    large: baseSpacing * 32,
+    xlarge: baseSpacing * 48
+  }
 
   const margin = {
     xsmall: baseSpacing / 8,
@@ -77,11 +85,44 @@ const theme = ({ variant, breakpoint }) => {
 
   const colors = COLOR_MAP[variant]
 
+  const text = {
+    size: {
+      xsmall: baseFontSize * 0.6875,
+      small: baseFontSize * 0.875,
+      medium: baseFontSize,
+      large: baseFontSize * 1.125,
+      xlarge: baseFontSize * 1.5,
+      xxlarge: baseFontSize * 2
+    }
+  }
+
+  const heading = {
+    size: {
+      small: text.size.large,
+      medium: text.size.xlarge,
+      large: text.size.xxlarge,
+    }
+  }
+
+  const subheading = {
+    size: {
+      small: text.size.medium,
+      medium: text.size.large,
+      large: text.size.xlarge,
+    }
+  }
+
   return {
     baseSpacing,
     baseFontSize,
     margin,
-    colors
+    layout,
+    colors,
+    typo: {
+      text,
+      heading,
+      subheading
+    }
   }
 }
 

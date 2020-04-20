@@ -1,29 +1,13 @@
 import React from 'react'
 import Text from '../Text'
+import {useTheme} from '../../lib/theme'
 
-const sizeStyles = {
-  s: {
-    fontSize: 16,
-    fontWeight: '500'
-  },
-  m: {
-    fontSize: 20,
-    fontWeight: '500'
-  },
-  l: {
-    fontSize: 24
-  }
+function Heading({children, style, size}) {
+  const {typo: {subheading}} = useTheme()
+
+  return (
+    <Text style={style} size={subheading.size[size] || size || subheading.size.medium} weight='600'>{children}</Text>
+  )
 }
 
-function Subheading({children, style, size}) {
-  const sizeStyle = sizeStyles[size || 'm']
-  const baseStyle = {
-    fontWeight: '400',
-    lineHeight: sizeStyle.fontSize * 1.2,
-    fontFamily: 'Barlow'
-  }
-
-  return <Text style={[baseStyle, sizeStyle, style]}>{children}</Text>
-}
-
-export default Subheading
+export default Heading

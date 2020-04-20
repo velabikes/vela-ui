@@ -1,15 +1,13 @@
 import React from 'react'
-import {View} from 'react-native'
 import Text from '../Text'
+import Box from '../Box'
 
-const Paragraph = ({children, size}) => {
-  const baseStyle = {
-    marginBottom: 16
-  }
+const Paragraph = ({children, ...props}) => {
+
   return (
-    <View style={baseStyle}>
-      <Text size={size}>{children}</Text>
-    </View>
+    <Box pad={{vertical: 'small'}}>
+      <Text {...props}>{children}</Text>
+    </Box>
   )
 }
 

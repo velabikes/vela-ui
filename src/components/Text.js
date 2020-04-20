@@ -2,27 +2,20 @@ import React from 'react'
 import {Text as RNText} from 'react-native'
 import {useTheme} from '../lib/theme'
 
-const sizeStyles = {
-  m: {
-    fontSize: 14
-  },
-  l: {
-    fontSize: 16
-  }
-}
 
-const Text = ({children, style, size, textAlign, ...props}) => {
-  const {colors} = useTheme()
-  const sizeStyle = sizeStyles['m']//[size || 'm']
+const Text = ({children, style, size, weight, textAlign, ...props}) => {
+  const {colors, typo: {text}} = useTheme()
 
   const baseStyle = {
     fontWeight: '500',
     color: colors.text,
     fontFamily: 'Barlow',
-    textAlign: textAlign || 'left'
+    textAlign: textAlign || 'left',
+    fontSize: text.size[size] || size || text.size.medium,
+    fontWeight: weight || '400'
   }
   return (
-    <RNText style={[baseStyle, sizeStyle, style]} {...props}>
+    <RNText style={[baseStyle, style]} {...props}>
       {children}
     </RNText>
   )

@@ -1,7 +1,7 @@
 import React, {Children} from "react"
-import {View} from "react-native"
+import {View, TouchableOpacity} from "react-native"
 import { useTheme } from "../lib/theme"
-import { Spacer } from ".."
+import { Gap } from ".."
 
 const FLEX_MAP = {
   [true]: 1,
@@ -41,9 +41,12 @@ const Box = ({
   round,
   background,
   gap,
+  height,
+  width,
+  onPress,
   ...props
 }) => {
-  const { margin, colors } = useTheme();
+  const { margin, colors, layout } = useTheme();
   const baseStyle = {
     display: 'flex',
     flex: FLEX_MAP[flex] || 0,
@@ -54,18 +57,22 @@ const Box = ({
     paddingLeft:  margin[pad] || margin[pad.left] || margin[pad.horizontal],
     paddingTop:  margin[pad] || margin[pad.top] || margin[pad.vertical],
     paddingBottom:  margin[pad] || margin[pad.bottom] || margin[pad.vertical],
-    borderRadius: margin[round],
+    borderRadius: margin[round] || round,
     maxWidth,
     maxHeight,
+    height: layout[height] || height,
+    width: layout[width] || width,
     backgroundColor: colors[background] || 'transparent',
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: Math.round(elevation * 0.42857 + 0.142857),
-    },
-    shadowOpacity: 0.16 + elevation * 0.02,
-    shadowRadius: Math.round(0.647 * elevation + 0.237),
-    elevation: elevation,
+    ...(elevation && {
+      shadowColor: "#000",
+      shadowOffset: {
+        width: 0,
+        height: Math.round(elevation * 0.42857 + 0.142857),
+      },
+      shadowOpacity: 0.16 + elevation * 0.02,
+      shadowRadius: Math.round(0.647 * elevation + 0.237),
+      elevation: elevation,
+    })
   }
 
   let contents = children
@@ -73,14 +80,16 @@ const Box = ({
     contents = []
     Children.forEach(children, (child, index) => {
       contents.push(child)
-      contents.push(<Spacer size={gap} key={`gap-${index}`}/>)
+      contents.push(<Gap size={gap} ket={`gap-${index}`}/>)
     })
   }
 
+  const Component = onPress ? TouchableOpacity : View
+
   return (
-    <View style={[baseStyle, style]} {...props}>
+    <Component style={[baseStyle, style]} onPress={onPress} {...props}>
       {contents}
-    </View>
+    </Component>
   )
 }
 
