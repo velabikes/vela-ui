@@ -73,7 +73,7 @@ const Box = ({
     contents = []
     Children.forEach(children, (child, index) => {
       contents.push(child)
-      contents.push(<Spacer size={gap} ket={`gap-${index}`}/>)
+      contents.push(<Spacer size={gap} key={`gap-${index}`}/>)
     })
   }
 
