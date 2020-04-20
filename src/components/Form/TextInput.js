@@ -12,7 +12,7 @@ function TextInput({style, error, onBlur, ...props}) {
   const handleFocus = () => setFocus(true)
   const baseStyle = {
     padding: 12,
-    borderColor: error ? colors.negative : focus ? colors.link : colors.border,
+    borderColor: error ? colors.negative : focus ? colors.secondary : colors.border,
     borderWidth: 1,
     borderRadius: 14,
     fontSize: 16,
