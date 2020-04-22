@@ -17,7 +17,7 @@ function Button({
 
   const baseRoundStyle = {
     borderRadius: 48,
-    padding: 16,
+    padding: 18,
     width: 48,
     height: 48
   };
