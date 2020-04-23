@@ -3,11 +3,13 @@ import { SafeAreaView } from "react-native";
 import DrawerItem from "./DrawerItem";
 import Box from "../Box";
 
-function DrawerContent({ navigation, state, descriptors }) {
+function DrawerContent({ navigation, state, descriptors, drawerHeader }) {
+  const DrawerHeader = drawerHeader
   return (
     <Box flex background='foreground'>
       <SafeAreaView>
-        <Box pad="large">
+        <DrawerHeader />
+        <Box pad="xlarge">
           {state.routes.map(route => {
             const { drawerLabel, drawerIcon } = descriptors[route.key].options;
             return (
