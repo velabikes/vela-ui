@@ -11,17 +11,13 @@ const DrawerItem = ({ navigation, icon, label, routeName}) => {
     height: 24,
     color: colors.title
   }
-  const baseTextStyle = {
-    fontSize: 18,
-    color: colors.title,
-    marginLeft: 16
-  }
   const Icon = icon
+
   return (
     <TouchableOpacity onPress={() => navigation.navigate(routeName)}>
-      <Box pad={{vertical: "medium"}} direction="row">
+      <Box pad={{vertical: "medium"}} direction="row" gap='large'>
         <Icon style={baseIconStyle} />
-        <Text style={baseTextStyle}>{label}</Text>
+        <Text size='large' weight='500'>{label}</Text>
       </Box>
     </TouchableOpacity>
   )

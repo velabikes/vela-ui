@@ -9,7 +9,7 @@ function DrawerContent({ navigation, state, descriptors, drawerHeader }) {
     <Box flex background='foreground'>
       <SafeAreaView>
         <DrawerHeader />
-        <Box pad="xlarge">
+        <Box pad={{horizontal: "xlarge", vertical: "large"}}>
           {state.routes.map(route => {
             const { drawerLabel, drawerIcon } = descriptors[route.key].options;
             return (
