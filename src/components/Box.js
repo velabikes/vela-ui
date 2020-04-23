@@ -80,7 +80,7 @@ const Box = ({
     contents = []
     Children.forEach(children, (child, index) => {
       contents.push(child)
-      contents.push(<Gap size={gap} ket={`gap-${index}`}/>)
+      if (index !== children.length - 1) contents.push(<Gap size={gap} ket={`gap-${index}`}/>)
     })
   }
 

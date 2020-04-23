@@ -106,7 +106,7 @@ const theme = ({ variant, breakpoint }) => {
 
   const subheading = {
     size: {
-      small: text.size.medium,
+      small: text.size.small,
       medium: text.size.large,
       large: text.size.xlarge,
     }
