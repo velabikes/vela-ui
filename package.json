@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "formik": "^2.1.4",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "string-mask": "^0.3.0"
   }
 }
