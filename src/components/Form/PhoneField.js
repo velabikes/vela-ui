@@ -3,7 +3,7 @@ import PhoneInput from './PhoneInput'
 import FieldBase from './FieldBase'
 
 const validatePhone = value => {
-  if (value.length < 14) return 'Telefone incompleto.'
+  if (value.length < 11) return 'Telefone incompleto.'
 }
 
 export default props =>
