@@ -1,13 +1,14 @@
 import React from "react";
-import { SafeAreaView, View } from "react-native";
+import { SafeAreaView } from "react-native";
 import Box from "../Box";
 import HeaderMenuButton from "./NavbarMenuButton";
 import HeaderBackButton from "./NavbarBackButton";
 import Heading from "../Typo/Heading";
 
-export default function Navbar({ scene, previous, onBack }) {
-  const { options, navigation } = scene.descriptor;
-  const title = options.title || scene.route.name;
+export default function Navbar({ scene, previous }) {
+  const { options, navigation } = scene.descriptor
+  const title = options.title || scene.route.name
+  const { onBack } = options
 
   return (
     <Box background='foreground'>
