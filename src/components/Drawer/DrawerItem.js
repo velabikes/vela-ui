@@ -4,7 +4,7 @@ import {useTheme} from '../../lib/theme'
 import Text from '../Text'
 import Box from '../Box'
 
-const DrawerItem = ({ navigation, icon, label, routeName}) => {
+const DrawerItem = ({ navigation, icon, label, routeName, focused}) => {
   const {colors} = useTheme()
   const baseIconStyle = {
     width: 24,
@@ -15,7 +15,7 @@ const DrawerItem = ({ navigation, icon, label, routeName}) => {
 
   return (
     <TouchableOpacity onPress={() => navigation.navigate(routeName)}>
-      <Box pad={{vertical: "medium"}} direction="row" gap='large'>
+      <Box pad={{vertical: "large", horizontal: "xlarge"}} direction="row" gap='large' background={focused && 'background'}>
         <Icon style={baseIconStyle} />
         <Text size='large' weight='500'>{label}</Text>
       </Box>
