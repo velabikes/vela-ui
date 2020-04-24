@@ -6,7 +6,7 @@ import Text from "../Text";
 
 function DrawerContent({ navigation, state, descriptors, drawerHeader, ...props }) {
   const DrawerHeader = drawerHeader
-  console.log(descriptors, props)
+
   return (
     <Box flex background='foreground'>
       <SafeAreaView>
