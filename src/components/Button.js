@@ -17,7 +17,7 @@ function Button({
 
   const baseRoundStyle = {
     borderRadius: 48,
-    padding: 18,
+    padding: 12,
     width: 48,
     height: 48
   };
@@ -63,8 +63,8 @@ function Button({
     ...variantStyle
   };
   const baseIconStyle = {
-    width: 14,
-    height: 14,
+    width: 24,
+    height: 24,
     color: variantStyle.color
   };
   const baseTextStyle = {

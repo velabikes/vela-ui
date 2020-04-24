@@ -3,8 +3,8 @@ import {Image} from 'react-native'
 
 function ProfileImage({style, ...props}) {
   const baseContainerStyle = {
-    height: 128,
-    width: 128,
+    height: 96,
+    width: 96,
     borderRadius: 64,
     marginRight: 'auto',
     marginLeft: 'auto'
