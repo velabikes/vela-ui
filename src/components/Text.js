@@ -3,12 +3,12 @@ import {Text as RNText} from 'react-native'
 import {useTheme} from '../lib/theme'
 
 
-const Text = ({children, style, size, weight, textAlign, ...props}) => {
+const Text = ({children, style, color, size, weight, textAlign, ...props}) => {
   const {colors, typo: {text}} = useTheme()
 
   const baseStyle = {
     fontWeight: '500',
-    color: colors.text,
+    color: colors[color] || color || colors.text,
     fontFamily: 'Barlow',
     textAlign: textAlign || 'left',
     fontSize: text.size[size] || size || text.size.medium,
