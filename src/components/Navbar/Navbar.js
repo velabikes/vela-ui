@@ -5,7 +5,7 @@ import HeaderMenuButton from "./NavbarMenuButton";
 import HeaderBackButton from "./NavbarBackButton";
 import Heading from "../Typo/Heading";
 
-export default function Navbar({ scene, previous }) {
+export default function Navbar({ scene, previous, onBack }) {
   const { options, navigation } = scene.descriptor;
   const title = options.title || scene.route.name;
 
@@ -15,7 +15,8 @@ export default function Navbar({ scene, previous }) {
         <Box pad="large" direction="row" align="center">
           <Box flex>
             { navigation && navigation.openDrawer && <HeaderMenuButton navigation={navigation} /> }
-            { previous && <HeaderBackButton navigation={navigation} /> }
+            { previous && !onBack && <HeaderBackButton navigation={navigation} /> }
+            { onBack && <HeaderBackButton onPress={onBack} /> }
           </Box>
           <Box flex>
             <Heading size="small" textAlign='center'>

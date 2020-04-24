@@ -2,9 +2,9 @@ import React from "react"
 import { TouchableOpacity } from "react-native"
 import Icons from "../Icons"
 
-export default function NavbarBackButton({navigation}) {
+export default function NavbarBackButton({navigation, onPress}) {
   return (
-    <TouchableOpacity onPress={navigation && navigation.goBack}>
+    <TouchableOpacity onPress={onPress || (navigation && navigation.goBack)}>
       <Icons.Back />
     </TouchableOpacity>
   );
