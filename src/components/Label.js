@@ -2,14 +2,12 @@ import React from 'react'
 import Text from './Text'
 import {useTheme} from '../lib/theme'
 
-const Label = ({children, style}) => {
+const Label = ({style, ...props}) => {
   const {colors} = useTheme()
   const baseStyle = {
     color: colors.footnote,
-    fontWeight: '600',
-    fontSize: 14
   }
-  return <Text style={[baseStyle, style]}>{children}</Text>
+  return <Text style={[baseStyle, style]} weight='600' {...props} />
 }
 
 export default Label
