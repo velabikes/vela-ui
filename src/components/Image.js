@@ -1,11 +1,11 @@
 import React from 'react'
+import {Box} from '@vela/ui'
 import {Image as BaseImage, View, ActivityIndicator} from 'react-native'
 import {useTheme} from '../lib/theme'
 
 function Image({style, loading, round, ...props}) {
   const {colors} = useTheme()
   const baseContainerStyle = {
-    ...(round && {borderRadius: 32}),
     overflow: 'hidden'
   }
   const baseActivityStyle = {
@@ -19,10 +19,17 @@ function Image({style, loading, round, ...props}) {
     resizeMode: 'contain'
   }
   return (
-    <View style={[baseContainerStyle, style]}>
-      <ActivityIndicator style={baseActivityStyle} color={colors.link} />
-      {!loading && <BaseImage style={[baseStyle, style]} {...props} />}
-    </View>
+    <Box style={[baseContainerStyle, style]} {...props}>
+      {loading &&
+        <ActivityIndicator style={baseActivityStyle} color={colors.link} />
+      }
+      {!loading &&
+        <BaseImage
+          style={[baseStyle, style]}
+          {...props}
+        />
+      }
+    </Box>
   )
 }
 
