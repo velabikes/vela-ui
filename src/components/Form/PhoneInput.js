@@ -1,11 +1,8 @@
 import React from 'react'
 import TextInput from './TextInput'
 
-//import { TextInputMask } from 'react-native-masked-text'
-
 const phoneFormat = phone => phone.replace(/([^\d])+/gim, '')
 const maskPhone = value => value.replace(/^(\d{2})(\d{4,5})(\d{1,4}).*/,"$1 $2-$3")
-
 
 const PhoneInput = ({onChangeText, value, ...props }) => {
   return (
