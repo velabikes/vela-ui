@@ -42,8 +42,8 @@ const COLOR_MAP = {
     warning: '#FFAF2D'
   },
   dark: {
-    background: '#2D2D2D',
-    foreground: '#4B4A4A',
+    background: '#4B4A4A',
+    foreground: '#2D2D2D',
     title: '#EFEFEF',
     text: '#FFFEFE',
     footnote: '#C3BEBE',
@@ -51,15 +51,15 @@ const COLOR_MAP = {
     anchor: '#78DEF5',
     input: '#2D2D2D',
     border: '#D6D4D4',
-    brand: '#3D9771',
-    primary: '#43CD8B',
-    secondary: '#4FD4F0',
+    brand: '#43CD8B',
+    primary: '#84E8CD',
+    secondary: '#78DEF5',
     negative: '#FA4242',
     disabled: '#4B4A4A',
-    cta: '#FF6574',
-    charge: '#FB9199',
-    alert: '#FC837B',
-    warning: '#FFD859'
+    cta: '#FB9199',
+    charge: '#FF6574',
+    alert: '#FA4242',
+    warning: '#FFCF39'
   }
 }
 
