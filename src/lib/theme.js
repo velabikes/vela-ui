@@ -22,7 +22,8 @@ const BREAKPOINT_MAP = {
 
 const COLOR_MAP = {
   light: {
-    background: '#EFEFEF',
+    background: '#D6E4E4',
+    midground: '#EFEFEF',
     foreground: '#FFFEFE',
     title: '#4B4A4A',
     text: '#2D2D2D',
@@ -42,15 +43,16 @@ const COLOR_MAP = {
     warning: '#FFAF2D'
   },
   dark: {
-    background: '#4B4A4A',
-    foreground: '#2D2D2D',
+    background: '#1D1D1D',
+    midground: '#2D2D2D',
+    foreground: '#333434',
     title: '#EFEFEF',
     text: '#FFFEFE',
     footnote: '#C3BEBE',
     placeholder: '#D6D4D4',
     anchor: '#78DEF5',
     input: '#2D2D2D',
-    border: '#D6D4D4',
+    border: '#4B4A4A',
     brand: '#43CD8B',
     primary: '#84E8CD',
     secondary: '#78DEF5',

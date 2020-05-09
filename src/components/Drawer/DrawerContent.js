@@ -8,7 +8,7 @@ function DrawerContent({ navigation, state, descriptors, drawerHeader, ...props 
   const DrawerHeader = drawerHeader
 
   return (
-    <Box flex background='foreground'>
+    <Box flex background='midground'>
       <SafeAreaView>
         <DrawerHeader />
         <Box>
