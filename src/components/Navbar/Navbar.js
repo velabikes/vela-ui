@@ -13,21 +13,24 @@ export default function Navbar({ scene, previous }) {
 
   return (
     <Box background="foreground">
-      <Box style={{ paddingTop: insets.top }}></Box>
-      <Box pad="large" direction="row" align="center">
-        <Box flex>
-          {navigation && navigation.openDrawer && (
-            <HeaderMenuButton navigation={navigation} />
-          )}
-          {previous && !onBack && <HeaderBackButton navigation={navigation} />}
-          {onBack && <HeaderBackButton onPress={onBack} />}
+      <Box style={{ paddingTop: insets.top }}>
+        <Box pad="large" direction="row" align="center">
+          <Box flex>
+            {navigation && navigation.openDrawer && (
+              <HeaderMenuButton navigation={navigation} />
+            )}
+            {previous && !onBack && (
+              <HeaderBackButton navigation={navigation} />
+            )}
+            {onBack && <HeaderBackButton onPress={onBack} />}
+          </Box>
+          <Box flex>
+            <Heading size="small" textAlign="center">
+              {title}
+            </Heading>
+          </Box>
+          <Box flex />
         </Box>
-        <Box flex>
-          <Heading size="small" textAlign="center">
-            {title}
-          </Heading>
-        </Box>
-        <Box flex />
       </Box>
     </Box>
   );
