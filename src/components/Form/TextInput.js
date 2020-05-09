@@ -20,9 +20,7 @@ function TextInput({style, error, onBlur, ...props}) {
     backgroundColor: colors.input,
     color: colors.text
   }
-  const textStyle = {
-    color: colors.text
-  }
+
   return (
     <BaseTextInput
       style={[baseStyle, style]}

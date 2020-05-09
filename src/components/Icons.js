@@ -1,406 +1,414 @@
 import React from 'react'
 import Svg, {Path} from 'react-native-svg'
 import {useTheme} from '../lib/theme'
+import {colorIsDark} from '../lib/colors'
 
-export const Logo = ({style, ...props}) => {
+const useTextColor = background => {
   const {colors} = useTheme()
+  const backgroundValue = colors[background] || background
+  const textTheme = useTheme(colorIsDark(backgroundValue) ? 'dark' : 'light')
+  return backgroundValue ? textTheme.colors.text : colors.text
+}
+
+export const Logo = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M16.3539 13.6944C14.8173 16.0847 11.8294 18.3896 8.84155 19.7555C7.3903 20.4385 5.59757 19.6701 5.42684 17.7067C5.34147 16.4262 6.36589 11.4748 6.45125 11.048C6.53662 10.2797 5.93905 10.109 5.17074 10.7919L5 10.5358C5 10.5358 8.41471 7.20645 8.75618 6.86497C9.09766 6.60887 10.3782 5.41372 10.9757 7.03571C11.488 8.74307 10.5489 12.2431 10.3782 13.0968C10.2074 14.0359 9.26839 17.7067 10.3782 17.7067C11.9148 17.7067 13.1953 13.4383 13.366 12.67C13.6222 11.8163 14.4758 5.92593 12.6831 7.71865L12.5124 7.63329C12.5124 7.63329 15.2441 4.98688 15.9271 4.56004C16.61 4.1332 17.5491 3.36489 17.8905 4.98688C18.232 6.60887 17.8905 11.3041 16.3539 13.6944Z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Back = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Back = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M19.4 10.45H8l3.9-3.9c.5-.5.5-1.5 0-2.1-.6-.6-1.5-.6-2.1 0l-6.4 6.3c-.3.3-.4.7-.4 1.1 0 .3.1.6.2.8 0 .1.1.1.1.2 0 0 0 .1.1.1l6.3 6.3c.6.6 1.5.6 2.1 0 .6-.6.6-1.5 0-2.1l-3.6-3.7h11.2c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Error = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Error = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M19.571 17.95l-5.523-5.8 5.333-5.6a1.5 1.5 0 000-2.1c-.572-.6-1.429-.6-2 0l-5.333 5.7-5.334-5.7c-.571-.6-1.428-.6-2 0-.285.3-.476.7-.476 1.1 0 .4.095.8.381 1.1l5.333 5.6-5.523 5.8a1.5 1.5 0 000 2.1c.285.3.666.4 1.047.4.381 0 .762-.1 1.048-.4l5.524-5.8 5.523 5.8c.572.6 1.429.6 2 0 .572-.6.572-1.6 0-2.2z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Down = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Down = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M19.175 9.45c-.6-.6-1.5-.6-2.1 0l-5.3 5.3-5.2-5.3c-.6-.5-1.6-.5-2.2 0-.5.6-.5 1.6 0 2.2l6.3 6.3c.3.3.7.4 1.1.4.4 0 .8-.1 1.1-.4l6.3-6.3c.6-.6.6-1.6 0-2.2z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Check = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Check = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M21.42 5.363c-.6-.5-1.4-.5-1.9.1l-10 11.1-5.3-4.3c-.6-.4-1.4-.4-1.9.2-.5.6-.4 1.4.2 1.9l6.2 5.2s.1 0 .1.1c0 0 .1 0 .1.1 0 0 .1 0 .1.1H10.02c.1 0 .1 0 .2-.1 0 0 .1 0 .1-.1.1 0 .1-.1.1-.1l.1-.1.1-.1 10.9-12.1c.5-.5.4-1.4-.1-1.9z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Add = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Add = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M19.7 10.4h-6.5V3.6c0-.9-.7-1.6-1.6-1.6-.9 0-1.6.7-1.6 1.6v6.8H3.6c-.9 0-1.6.7-1.6 1.5s.7 1.6 1.6 1.6H10v6.2c0 .9.7 1.6 1.6 1.6.9 0 1.6-.7 1.6-1.6v-6.2h6.5c.9 0 1.6-.7 1.6-1.6 0-.9-.8-1.5-1.6-1.5z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Delete = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Delete = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M16.4 11H7.5c-.8 0-1.5.7-1.5 1.5S6.7 14 7.5 14h8.9c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Fast = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Fast = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M4.4 12.625h5.4c.5 0 .8-.4.8-.8 0-.5-.3-.8-.8-.8H4.4c-.4 0-.8.3-.8.8 0 .4.4.8.8.8zM9.8 13.925h-4c-.5 0-.8.4-.8.8s.4.8.8.8h4c.5 0 .8-.4.8-.8s-.3-.8-.8-.8zM10.8 8.925c0-.5-.4-.8-.8-.8H2.8c-.4 0-.8.3-.8.8s.4.8.8.8H9.9c.5 0 .9-.4.9-.8z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
       <Path
         d='M14.9 4.025c-1.4-.1-2.8.1-4 .6-1 .4-.7 1.9.3 1.9 1.2-.7 2.7-.9 4.3-.5 2.5.6 4.4 2.7 4.7 5.3.4 3.9-2.7 7.1-6.4 6.9-1.2-.1-2.3-.5-3.2-1.1-1.1-.1-1.5 1.3-.6 1.9 1.1.6 2.3 1 3.6 1.1 4.6.2 8.5-3.4 8.4-8.1 0-4.1-3.1-7.5-7.1-8z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
       <Path
         d='M14.5 13.225a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const User = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const User = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M11.8 11.8c2.2 0 3.9-1.8 3.9-3.9C15.7 5.8 14 4 11.8 4S7.9 5.8 7.9 7.9c0 2.2 1.7 3.9 3.9 3.9zM20.6 16.9c0-2-5.8-3.1-8.8-3.1-3 0-8.8 1.1-8.8 3.1v2.8c0 .3.4.5.8.5h16c.4 0 .8-.2.8-.5v-2.8z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Menu = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Menu = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M6.2 8.5h12.6c.7 0 1.2-.5 1.2-1.2S19.5 6 18.8 6H6.2C5.5 6 5 6.5 5 7.2s.5 1.3 1.2 1.3zM18.8 11.4H6.2c-.7 0-1.2.6-1.2 1.3 0 .7.5 1.2 1.2 1.2h12.6c.7 0 1.2-.5 1.2-1.2s-.5-1.3-1.2-1.3zM18.8 16.9H6.2c-.7 0-1.2.5-1.2 1.2s.5 1.2 1.2 1.2h12.6c.7 0 1.2-.5 1.2-1.2s-.5-1.2-1.2-1.2z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Cart = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Cart = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M8.2 17c-1 0-1.7.8-1.7 1.7 0 .9.8 1.7 1.7 1.7.9 0 1.8-.7 1.8-1.7S9.2 17 8.2 17zM3 3.9c0 .5.4.9.9.9h.9l3.1 6.6-1.2 2.1c-.5.8-.2 1.9.7 2.4.3.1.6.2.8.2h9.6c.5 0 .9-.4.9-.9s-.4-.9-.9-.9H8.2l1-1.7h6.5c.6 0 1.2-.3 1.5-.9L20.3 6c.2-.4.1-.9-.3-1.2-.1-.1-.3-.1-.5-.1H6.7l-.6-1.2C6 3.2 5.6 3 5.3 3H3.9c-.5 0-.9.4-.9.9zM17 17c-1 0-1.7.8-1.7 1.7 0 .9.8 1.7 1.7 1.7.9 0 1.7-.8 1.7-1.7 0-.9-.7-1.7-1.7-1.7z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Pin = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Pin = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M16 6.902C16 4.712 14.244 3 12 3 9.756 3 8 4.713 8 6.902c0 1.712 1.17 3.235 2.83 3.71v9.612c0 .095.097.285.194.285l.586.381c.195.19.585.095.78 0l.683-.38c.098-.096.195-.19.195-.286v-9.611C14.83 10.137 16 8.614 16 6.902z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Location = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Location = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M19.85 4.15a.555.555 0 00-.63-.09L4.36 10.453c-.27.09-.36.36-.36.63s.18.45.45.54l6.125 1.801 1.8 6.125c.09.27.27.45.541.45.27 0 .45-.18.54-.36l6.485-14.86c.09-.18.09-.45-.09-.63z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Marker = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Marker = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M11.75 3C7.98 3 5 6.245 5 10.191c0 4.911 6.049 10.349 6.312 10.612.263.263.701.263.876 0 .263-.263 6.312-5.7 6.312-10.612C18.412 6.245 15.432 3 11.75 3z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Battery = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Battery = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M14.98 5.333h-.384v-.089c0-.71-.577-1.244-1.346-1.244h-2.5c-.673 0-1.25.533-1.25 1.244v.09h-.48C7.961 5.333 7 6.221 7 7.2v10.933C7 19.2 7.962 20 9.02 20h5.96c1.155 0 2.02-.889 2.02-1.867V7.2c0-.978-.865-1.867-2.02-1.867zm.097 12.8c0 .09 0 .09-.096.09H9.019s-.096 0-.096-.09V7.2c0-.089.096-.089.096-.089h5.962a.09.09 0 01.096.089v10.933z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Phone = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Phone = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M19.87 16.675l-2.6-2.7c-.5-.5-1.4-.5-2 0l-1.3 1.4c-.1 0-.2-.1-.3-.1-.9-.5-2-1.1-3.2-2.3-1.3-1.3-1.9-2.5-2.4-3.4-.1 0-.1-.1-.2-.2l.9-.9.5-.5c.6-.6.6-1.4 0-2l-2.6-2.6c-.5-.5-1.4-.5-2 0l-.8.8c-.2.3-.4.7-.6 1.1-.1.4-.2.7-.2 1.1-.4 2.9.9 5.6 4.6 9.3 5 5 9.1 4.6 9.2 4.6.4 0 .7-.1 1.1-.3.4-.2.8-.4 1.1-.6l.8-.7c.6-.6.6-1.5 0-2z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Store = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Store = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M18.0652 4H5.93478C5.34783 4 4.8587 4.48077 4.8587 5.05769C4.8587 5.63462 5.34783 6.11538 5.93478 6.11538H18.0652C18.6522 6.11538 19.1413 5.63462 19.1413 5.05769C19.1413 4.48077 18.6522 4 18.0652 4ZM21 13.7115L19.4348 8.51923C19.2391 7.94231 18.75 7.55769 18.0652 7.55769H5.93478C5.34783 7.55769 4.76087 7.94231 4.56522 8.51923L3 13.7115H4.8587V17.8462C4.8587 18.4231 5.34783 19 6.03261 19H12.6848C13.2717 19 13.8587 18.5192 13.8587 17.8462V13.7115H16.5V17.9423C16.5 18.5192 16.9891 19 17.5761 19H18.2609C18.8478 19 19.337 18.5192 19.337 17.9423V13.7115H21V13.7115ZM12.2935 17.1731H6.71739V13.5192H12.2935V17.1731Z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Wrench = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Wrench = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M20 7.71641C20 6.90312 19.6324 6.08984 19.0811 5.45729C18.9892 5.36693 18.8973 5.27656 18.7135 5.27656C18.6216 5.27656 18.4378 5.36693 18.4378 5.45729L17.3351 7.26458C17.0595 7.62604 16.6 7.80677 16.1405 7.62604C15.9568 7.53568 15.8649 7.44531 15.773 7.35495C15.4973 7.08385 15.4054 6.63203 15.5892 6.27057L16.5081 4.64401C16.6 4.55365 16.6 4.37292 16.5081 4.28255C16.6 4.10182 16.4162 4.01146 16.3243 4.01146C15.2216 3.92109 14.2108 4.37292 13.4757 5.09583C12.6486 5.81875 12.1892 6.81276 12.1892 7.89713C12.1892 8.07786 12.2811 8.34896 12.373 8.71042C12.4649 9.07187 12.373 9.5237 12.0973 9.79479L3.55135 18.1083C3.18378 18.4698 3 19.012 3 19.4638C3 20.2771 3.73514 21 4.56216 21C5.11351 21 5.57297 20.8193 6.03243 20.3674L14.3027 11.7828C14.5784 11.5117 14.9459 11.4214 15.3135 11.4214C16.6919 11.6924 17.9784 11.2406 18.8973 10.337C19.6324 9.61406 20 8.62005 20 7.71641ZM4.74595 20.006C4.37838 20.006 4.1027 19.7349 4.1027 19.3734C4.1027 19.012 4.37838 18.7409 4.74595 18.7409C5.11351 18.7409 5.38919 19.012 5.38919 19.3734C5.48108 19.6445 5.11351 20.006 4.74595 20.006Z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Bolt = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Bolt = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M10.21 20.378l2.282-6.58H6.439c-.264 0-.439-.263-.439-.526 0-.088 0-.175.088-.263 1.754-2.193 3.597-4.387 5.351-6.58.877-1.052 1.755-2.193 2.632-3.246.263-.175.526-.263.702-.087.175.087.175.35.175.526l-2.368 6.667h6.053c.263 0 .438.176.438.439 0 .088 0 .175-.087.263-1.755 2.193-3.51 4.386-5.352 6.58-.877 1.052-1.754 2.105-2.72 3.246-.175.175-.438.263-.613.087-.088-.087-.176-.35-.088-.526z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Parking = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Parking = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M10.7183 5C13.0624 5 14.862 5.3923 16.1172 6.17689C17.3724 6.94722 18 8.21683 18 9.98573C18 11.7689 17.3648 13.0599 16.0945 13.8588C14.8242 14.6434 13.0095 15.0357 10.6503 15.0357H9.53875V20H6V5.38516C6.77127 5.24251 7.5879 5.14265 8.44991 5.08559C9.31191 5.02853 10.0681 5 10.7183 5ZM10.9452 7.84593C10.6881 7.84593 10.431 7.85307 10.1739 7.86733C9.93195 7.8816 9.72023 7.89586 9.53875 7.91013V12.1897H10.6503C11.8752 12.1897 12.7977 12.0328 13.4178 11.719C14.0378 11.4051 14.3478 10.8203 14.3478 9.96434C14.3478 9.55064 14.2647 9.20827 14.0983 8.93723C13.9471 8.66619 13.7202 8.45221 13.4178 8.29529C13.1304 8.12411 12.775 8.00999 12.3516 7.95292C11.9282 7.8816 11.4594 7.84593 10.9452 7.84593Z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Super = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Super = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M12.1036 20C10.8752 20 9.80038 19.8138 8.87908 19.4413C7.95777 19.054 7.24376 18.5102 6.73704 17.8101C6.24568 17.095 6 16.2682 6 15.3296V14.838C6 14.7635 6.02303 14.7039 6.0691 14.6592C6.13052 14.5996 6.19962 14.5698 6.27639 14.5698H8.90211C8.97889 14.5698 9.04031 14.5996 9.08637 14.6592C9.14779 14.7039 9.1785 14.7635 9.1785 14.838V15.1732C9.1785 15.7691 9.46257 16.2756 10.0307 16.6927C10.5988 17.095 11.3666 17.2961 12.334 17.2961C13.1478 17.2961 13.7543 17.1322 14.1536 16.8045C14.5528 16.4618 14.7524 16.0447 14.7524 15.5531C14.7524 15.1955 14.6296 14.8976 14.3839 14.6592C14.1382 14.406 13.8004 14.1899 13.3704 14.0112C12.9559 13.8175 12.2879 13.5568 11.3666 13.2291C10.3378 12.8864 9.46257 12.5363 8.74088 12.1788C8.03455 11.8212 7.4357 11.3371 6.94434 10.7263C6.46833 10.1006 6.23033 9.33333 6.23033 8.42458C6.23033 7.53072 6.46833 6.7486 6.94434 6.07821C7.42035 5.40782 8.08061 4.89385 8.92514 4.53631C9.76967 4.17877 10.7447 4 11.8503 4C13.0173 4 14.0537 4.20112 14.9597 4.60335C15.881 5.00559 16.595 5.57169 17.1017 6.30168C17.6238 7.01676 17.8848 7.85102 17.8848 8.80447V9.13966C17.8848 9.21415 17.8541 9.28119 17.7927 9.34078C17.7466 9.38547 17.6852 9.40782 17.6084 9.40782H14.9597C14.8829 9.40782 14.8138 9.38547 14.7524 9.34078C14.7063 9.28119 14.6833 9.21415 14.6833 9.13966V8.96089C14.6833 8.3352 14.4146 7.80633 13.8772 7.3743C13.3551 6.92737 12.6334 6.70391 11.7121 6.70391C10.9904 6.70391 10.4223 6.85289 10.0077 7.15084C9.60844 7.44879 9.40883 7.85847 9.40883 8.37989C9.40883 8.75233 9.52399 9.06518 9.75432 9.31844C10 9.57169 10.3532 9.80261 10.8138 10.0112C11.2898 10.2048 12.0192 10.473 13.0019 10.8156C14.0921 11.203 14.9443 11.5456 15.5585 11.8436C16.1881 12.1415 16.7486 12.5885 17.2399 13.1844C17.7466 13.7654 18 14.5251 18 15.4637C18 16.8641 17.4702 17.9739 16.4107 18.7933C15.3512 19.5978 13.9155 20 12.1036 20Z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Lock = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Lock = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M17.149 10.307h-.304V8.882a4.855 4.855 0 00-4.988-4.881 4.855 4.855 0 00-4.702 4.881v1.425h-.304c-.468 0-.851.483-.851 1.08v7.14c0 .596.383 1.084.851 1.084H17.15c.469 0 .851-.488.851-1.085v-7.139c0-.596-.382-1.08-.851-1.08zm-4.187 4.636v2.159a.459.459 0 01-.456.456h-1.014a.456.456 0 01-.454-.454v-2.16a1.308 1.308 0 01.82-2.225 4.51 4.51 0 01.285 0 1.308 1.308 0 01.82 2.224zm1.862-4.636h-5.68V8.882a2.84 2.84 0 115.68 0v1.425z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Unlock = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Unlock = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M17.148 10.305H9.146V8.883a2.838 2.838 0 015.57-.81.993.993 0 00.964.713 1.008 1.008 0 00.977-1.273A4.856 4.856 0 0012.143 4h-.286a4.856 4.856 0 00-4.702 4.883v1.422h-.302c-.47 0-.853.486-.853 1.079v7.141c0 .596.383 1.08.853 1.08h10.295c.469 0 .852-.489.852-1.08v-7.138c0-.597-.383-1.082-.852-1.082zm-4.185 4.637v2.159a.458.458 0 01-.458.456H11.49a.453.453 0 01-.453-.454v-2.158a1.305 1.305 0 01.81-2.223h.285a1.308 1.308 0 01.81 2.223l.021-.003z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Bluetooth = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Bluetooth = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M17.6402 15.4618L12.5621 12L17.6402 8.53825C18.1199 8.21121 18.1199 7.60842 17.6402 7.28138L11.6402 3.19117C10.9889 2.74715 10 3.12604 10 3.81962V10.0251L6.70713 7.33137C6.31659 7.01189 5.68345 7.01189 5.29291 7.33137C4.90236 7.65085 4.90236 8.16878 5.29291 8.48826L9.58576 12L5.29291 15.5118C4.90236 15.8312 4.90236 16.3492 5.29291 16.6686C5.68345 16.9881 6.31659 16.9881 6.70713 16.6686L10 13.9749V20.1804C10 20.874 10.9889 21.2528 11.6402 20.8088L17.6402 16.7186C18.1199 16.3916 18.1199 15.7888 17.6402 15.4618ZM12 5.56613L15.4379 7.90976L12 10.2534V5.56613ZM12 18.4338V13.7465L15.4379 16.0902L12 18.4338Z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Sun = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Sun = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M14.836 9.164A4.035 4.035 0 0012 7.979c-1.1 0-2.116.444-2.836 1.185A4.035 4.035 0 007.979 12c0 1.1.465 2.116 1.185 2.836A4.035 4.035 0 0012 16.021c1.1 0 2.116-.444 2.836-1.185A4.035 4.035 0 0016.021 12c0-1.1-.444-2.116-1.185-2.836zM12 6.73a.56.56 0 00.55-.55V4.55A.56.56 0 0012 4a.56.56 0 00-.55.55v1.63c0 .296.254.55.55.55zM16.508 8.275l1.164-1.164a.537.537 0 000-.762.537.537 0 00-.762 0l-1.164 1.164a.537.537 0 000 .762c.19.212.53.212.762 0zM19.45 11.45h-1.63a.56.56 0 00-.55.55c0 .296.254.55.55.55h1.63A.56.56 0 0020 12a.56.56 0 00-.55-.55zM16.487 15.725a.536.536 0 00-.762 0 .536.536 0 000 .762l1.164 1.164c.212.211.55.211.762 0a.537.537 0 000-.762l-1.164-1.164zM12 17.27a.56.56 0 00-.55.55v1.63c0 .296.254.55.55.55a.56.56 0 00.55-.55v-1.63a.56.56 0 00-.55-.55zM7.492 15.725l-1.164 1.164a.537.537 0 000 .762c.212.211.55.211.762 0l1.164-1.164a.537.537 0 000-.762c-.19-.212-.53-.212-.762 0zM6.73 12a.56.56 0 00-.55-.55H4.55A.56.56 0 004 12c0 .296.254.55.55.55h1.63a.56.56 0 00.55-.55zM7.492 8.275c.212.212.55.212.762 0a.537.537 0 000-.762L7.09 6.35a.537.537 0 00-.762 0 .537.537 0 000 .762l1.164 1.164z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Cloud = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Cloud = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M14.673 7.5c.271-.019.504-.232.504-.503V5.504A.513.513 0 0014.673 5a.513.513 0 00-.504.504v1.493c0 .271.232.504.504.504zM18.782 8.896l1.066-1.066a.491.491 0 000-.698.491.491 0 00-.697 0l-1.067 1.066a.491.491 0 000 .698.491.491 0 00.698 0zM21.496 11.823h-1.493a.513.513 0 00-.504.504c0 .272.233.504.504.504h1.493a.513.513 0 00.504-.504.5.5 0 00-.504-.504zM18.782 15.739a.492.492 0 00-.698 0 .492.492 0 000 .698l1.067 1.066a.491.491 0 00.697 0 .491.491 0 000-.698l-1.066-1.066zM10.563 8.896a.491.491 0 00.698 0 .491.491 0 000-.698l-1.066-1.066a.491.491 0 00-.698 0 .491.491 0 000 .698l1.066 1.066zM13.723 12.986c-.422 0-.848.097-1.217.272a2.81 2.81 0 00-.993.775.438.438 0 01-.664.039.492.492 0 01-.039-.698 3.826 3.826 0 011.328-1.027c.092-.039.204-.097.296-.136a4.176 4.176 0 00-1.255-1.493 3.832 3.832 0 00-2.288-.756c-.993 0-1.9.388-2.597 1.008a4.287 4.287 0 00-1.348 2.56.446.446 0 01-.222.348.403.403 0 01-.257.078c-.684 0-1.309.29-1.75.775A2.684 2.684 0 002 16.573c0 .717.276 1.376.737 1.841.44.465 1.07.775 1.75.775h9.275c.794.059 1.53-.29 2.064-.872a3.194 3.194 0 00.867-2.21c0-.872-.33-1.647-.867-2.21a2.891 2.891 0 00-2.103-.91z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
       <Path
         d='M18.336 12.327a3.615 3.615 0 00-1.085-2.597 3.695 3.695 0 00-2.598-1.086c-.678 0-1.337.194-1.9.524a3.908 3.908 0 00-1.066.969c.272.213.504.446.718.698.31.349.562.756.775 1.202.116-.02.252-.02.368-.02a4.1 4.1 0 012.908 1.202c.155.155.31.349.446.523.213.291.388.62.504.97.29-.272.504-.601.64-.95.193-.446.29-.95.29-1.435z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Rain = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Rain = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M7.543 16.17a.12.12 0 00-.065-.066c-.08-.05-.212-.03-.257.065-.066.111-.146.227-.242.358-.419.615-1.033 1.522-1.033 2.052 0 .388.16.746.418 1.003.257.257.615.418 1.003.418.388 0 .746-.161 1.003-.403l.015-.015c.257-.257.418-.615.418-1.003 0-.535-.614-1.442-1.033-2.052-.08-.13-.166-.247-.227-.358zM12.382 16.17a.12.12 0 00-.066-.066c-.08-.05-.211-.03-.257.065-.065.111-.146.227-.241.358-.419.615-1.034 1.522-1.034 2.052 0 .388.162.746.419 1.003.257.257.615.418 1.003.418.388 0 .746-.161 1.003-.403l.015-.015c.257-.257.418-.615.418-1.003 0-.535-.615-1.442-1.033-2.052-.076-.13-.166-.247-.227-.358zM17.226 16.17a.12.12 0 00-.066-.066c-.08-.05-.211-.03-.257.065-.065.111-.146.227-.242.358-.418.615-1.033 1.522-1.033 2.052 0 .388.161.746.418 1.003.257.257.615.418 1.003.418.389 0 .746-.161 1.003-.403l.015-.015c.258-.257.419-.615.419-1.003 0-.535-.615-1.442-1.033-2.052-.081-.13-.172-.247-.227-.358zM19.464 9.153a3.276 3.276 0 00-2.319-.947c-.463 0-.927.1-1.35.282a3.146 3.146 0 00-1.11.806.6.6 0 01-.826.06.599.599 0 01-.06-.826A4.442 4.442 0 0115.29 7.42c.101-.04.182-.08.283-.12a4.653 4.653 0 00-1.351-1.513A4.394 4.394 0 0011.702 5a4.419 4.419 0 00-2.883 1.069A4.363 4.363 0 007.327 8.77a.558.558 0 01-.262.403.61.61 0 01-.323.101 2.73 2.73 0 00-1.936.807 2.73 2.73 0 000 3.871c.525.483 1.19.786 1.956.786h10.403c.908 0 1.714-.363 2.319-.948a3.276 3.276 0 00.947-2.318c0-.907-.363-1.714-.967-2.319z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Storm = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Storm = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M19.973 9.278a3.501 3.501 0 00-2.445-.998c-.489 0-.978.102-1.406.306a3.442 3.442 0 00-1.161.855.5.5 0 01-.734.041.5.5 0 01-.04-.733 4.488 4.488 0 011.507-1.12c.123-.062.245-.103.367-.143a4.415 4.415 0 00-1.467-1.65A4.596 4.596 0 0011.946 5c-1.141 0-2.2.407-3.016 1.12a4.562 4.562 0 00-1.548 2.812.522.522 0 01-.244.367.578.578 0 01-.265.081c-.795 0-1.528.326-2.038.836A2.847 2.847 0 004 12.253c0 .794.326 1.528.835 2.037.51.51 1.243.836 2.038.836h2.872c-.02-.163.02-.347.082-.51l1.589-3.26a.96.96 0 01.876-.57h1.854a.9.9 0 01.489.143.962.962 0 01.346 1.304l-.468.774c.142.04.285.102.407.204a.961.961 0 01.082 1.344l-.51.57h3.056c.958 0 1.814-.386 2.425-.998a3.452 3.452 0 00.998-2.424c0-.937-.387-1.813-.998-2.425z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
       <Path
         d='M14.35 13.863a.156.156 0 00-.102-.041h-1.161l1.16-1.976c.042-.062.021-.164-.06-.204-.02-.02-.041-.02-.082-.02h-1.813V11.6a.153.153 0 00-.143.102l-1.589 3.3c-.04.082 0 .163.061.204.02 0 .041.02.061.02h.958l-1.06 2.73c-.02.082 0 .163.082.184.061.02.122 0 .163-.04l3.545-4.035c.061-.06.04-.163-.02-.204zM7.77 16.129a.12.12 0 00-.067-.066c-.082-.051-.214-.03-.26.066a4.56 4.56 0 01-.244.362c-.423.621-1.045 1.538-1.045 2.073 0 .392.163.753.423 1.013.26.26.622.423 1.014.423s.754-.163 1.013-.407l.016-.016c.26-.26.422-.621.422-1.013 0-.54-.621-1.457-1.044-2.073-.081-.133-.168-.25-.229-.362zM17.294 16.129c-.016-.015-.03-.05-.067-.066-.081-.051-.213-.03-.26.066-.066.112-.147.23-.244.362-.422.621-1.044 1.538-1.044 2.073a1.5 1.5 0 00.443 1.013c.26.26.622.423 1.014.423s.754-.163 1.013-.423c.26-.26.423-.621.423-1.013 0-.54-.621-1.457-1.044-2.073-.087-.133-.168-.25-.234-.362z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Network = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Network = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M19.036 3a1.966 1.966 0 00-1.726 2.9l-3.216 3.216a2.6 2.6 0 00-3.206 0l-2.51-2.51c.115-.195.186-.418.186-.66a1.31 1.31 0 00-1.31-1.31 1.31 1.31 0 00-1.309 1.31c0 .721.588 1.309 1.31 1.309.242 0 .466-.07.66-.186l2.51 2.51a2.602 2.602 0 000 3.205L6.281 16.93a1.954 1.954 0 00-1.317-.51c-1.083 0-1.964.88-1.964 1.963 0 1.083.88 1.963 1.964 1.963a1.966 1.966 0 001.726-2.9l4.198-4.198c.362.282.799.47 1.276.53v3.325a1.965 1.965 0 00-1.636 1.934c0 1.083.88 1.964 1.963 1.964 1.083 0 1.964-.88 1.964-1.964 0-.97-.71-1.777-1.636-1.934v-3.325c.477-.06.913-.248 1.275-.53l2.51 2.51a1.29 1.29 0 00-.186.661 1.31 1.31 0 002.618 0 1.31 1.31 0 00-1.309-1.309c-.242 0-.466.07-.66.186l-2.51-2.51a2.603 2.603 0 000-3.206l3.163-3.163c.348.317.81.511 1.316.511 1.083 0 1.964-.88 1.964-1.963C21 3.88 20.12 3 19.036 3z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Info = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Info = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M4 12C4 16.3944 7.60563 20 12 20C13.3521 20 14.7042 19.662 15.831 18.9859C18.3099 17.6338 20 14.9296 20 11.8873C20 7.60563 16.3944 4 12 4C10.6479 4 9.29577 4.33803 8.16901 5.01408C5.69014 6.3662 4 8.95775 4 12ZM12.9014 16.0563C12.9014 16.507 12.4507 16.9577 12 16.9577C11.5493 16.9577 11.0986 16.507 11.0986 16.0563V11.2113C11.0986 10.7606 11.5493 10.3099 12 10.3099C12.4507 10.3099 12.9014 10.7606 12.9014 11.2113V16.0563ZM12 7.26761C12.6761 7.26761 13.1268 7.83099 13.1268 8.39437C13.1268 8.95775 12.5634 9.52113 12 9.52113C11.4366 9.52113 10.8732 8.95775 10.8732 8.39437C10.8732 7.83099 11.3239 7.26761 12 7.26761Z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Chat = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Chat = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M16.8519 4H6.04321C4.3642 4 3 5.44444 3 7.22222V13.3333C3 15.1111 4.3642 16.5556 6.04321 16.5556H6.46296V16.6667V19.2222C6.46296 19.5556 6.67284 19.8889 6.98765 20C7.09259 20 7.19753 20 7.19753 20C7.40741 20 7.61728 19.8889 7.82716 19.6667L10.1358 16.5556H16.9568C18.6358 16.5556 20 15.1111 20 13.3333V7.22222C19.8951 5.44444 18.5309 4 16.8519 4ZM13.5988 12.6667H9.40123C8.98148 12.6667 8.66667 12.3333 8.66667 11.8889C8.66667 11.4444 8.98148 11.1111 9.40123 11.1111H13.5988C14.0185 11.1111 14.3333 11.4444 14.3333 11.8889C14.3333 12.3333 14.0185 12.6667 13.5988 12.6667ZM15.0679 9.33333H7.9321C7.51235 9.33333 7.19753 9 7.19753 8.66667C7.19753 8.22222 7.51235 7.88889 7.9321 7.88889H15.0679C15.4877 7.88889 15.8025 8.22222 15.8025 8.66667C15.8025 9 15.3827 9.33333 15.0679 9.33333Z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
 }
 
-export const Mail = ({style, ...props}) => {
-  const {colors} = useTheme()
+export const Mail = ({style, background, ...props}) => {
+  const textColor = useTextColor(background)
   return (
     <Svg viewBox='0 0 24 24' style={[defaultStyle, style]} {...props}>
       <Path
         d='M4.16071 5C3.58036 5 3 5.58036 3 6.16071V6.27679L12.1696 11.9643L21.3393 6.39286V6.16071C21.3393 5.46429 20.7589 5 20.1786 5H4.16071Z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
       <Path
         d='M11.7054 13.8214L3 8.48214V16.8393C3 17.5357 3.58036 18 4.16071 18H20.0625C20.7589 18 21.2232 17.4196 21.2232 16.8393V8.48214L12.6339 13.8214C12.5179 13.9375 12.4018 13.9375 12.1696 13.9375C12.0536 13.9375 11.8214 13.9375 11.7054 13.8214Z'
-        fill={(style && style.color) || colors.text}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   )
