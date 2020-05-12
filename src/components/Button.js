@@ -1,91 +1,32 @@
 import React from "react";
-import { TouchableOpacity, View } from "react-native";
-import { useTheme } from "../lib/theme";
 import Text from "./Text";
+import Box from "./Box";
 
-function Button({
-  style,
-  solid,
-  round,
-  disabled,
-  variant,
-  icon,
-  label,
-  onPress
-}) {
-  const { colors } = useTheme();
-
-  const baseRoundStyle = {
-    borderRadius: 48,
-    padding: 12,
-    width: 48,
-    height: 48
-  };
-
-  const variantStyles = {
-    default: {
-      color: !solid ? colors.link : colors.background,
-      ...(solid && { backgroundColor: colors.link })
-    },
-    primary: {
-      color: !solid ? colors.primary : colors.background,
-      ...(solid && { backgroundColor: colors.primary })
-    },
-    secondary: {
-      color: !solid ? colors.secondary : colors.background,
-      ...(solid && { backgroundColor: colors.secondary })
-    },
-    cta: {
-      color: !solid ? colors.cta : colors.background,
-      ...(solid && { backgroundColor: colors.cta })
-    },
-    negative: {
-      color: !solid ? colors.negative : colors.background,
-      ...(solid && { backgroundColor: colors.negative })
-    },
-    disabled: {
-      color: colors.footnote,
-      ...(solid && { backgroundColor: colors.disabled })
-    },
-    round: {
-      ...{ style: baseRoundStyle }
-    }
-  };
-
-  const variantStyle =
-    variantStyles[variant || (disabled && "disabled") || "default"];
-
-  const baseContainerStyle = {
-    flexDirection: "row",
-    justifyContent: "center",
-    padding: 16,
-    borderRadius: 16,
-    ...variantStyle
-  };
-  const baseIconStyle = {
-    width: 24,
-    height: 24,
-    color: variantStyle.color
-  };
-  const baseTextStyle = {
-    fontSize: 16,
-    lineHeight: 16,
-    color: variantStyle.color,
-    fontWeight: "bold",
-    fontFamily: "Barlow",
-    marginLeft: 4,
-    ...variantStyle
-  };
+function Button({ style, textStyle, size = "large", background, color, round, icon, label, onPress, ...props }) {
   const Icon = icon;
-  const Container = disabled ? View : TouchableOpacity;
+
   return (
-    <Container
-      style={[baseContainerStyle, round && baseRoundStyle, style]}
+    <Box
+      background={background}
+      round={round || size}
+      pad="medium"
+      style={style}
       onPress={onPress}
     >
-      {Icon && <Icon style={baseIconStyle} />}
-      {label && <Text style={baseTextStyle}>{label}</Text>}
-    </Container>
+      <Box pad="small" direction="row" align="center" {...props}>
+        <Box width='20%' align="center">
+          {Icon && <Icon size={size} background={background} />}
+        </Box>
+        <Box width='60%' align="center">
+          {label && (
+            <Text style={textStyle} color={color} size={size} weight="bold" background={background}>
+              {label}
+            </Text>
+          )}
+        </Box>
+        <Box width='20%' />
+      </Box>
+    </Box>
   );
 }
 

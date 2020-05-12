@@ -10,7 +10,7 @@ const containerStyle = {
   justifyContent: 'center',
   alignItems: 'center',
   overflow: 'hidden',
-  backgroundColor: 'lightgray'
+  backgroundColor: 'rgba(128,128,128,0.3)'
 }
 const textStyle = {
   textAlign: 'center'

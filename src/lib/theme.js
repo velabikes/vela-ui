@@ -2,6 +2,13 @@ import {createContext, useContext} from 'react'
 import {useWindowDimensions} from 'react-native'
 export const ThemeContext = createContext('light')
 
+const pallete = {
+  white: '#FFFFFF',
+  black: '#000000',
+  vela: '#3D9771',
+  google: '#4285F4'
+}
+
 const SPACING_MAP = {
   small: 16,
   medium: 24,
@@ -22,7 +29,7 @@ const BREAKPOINT_MAP = {
 
 const COLOR_MAP = {
   light: {
-    background: '#D6E4E4',
+    background: '#DFE4E4',
     midground: '#EFEFEF',
     foreground: '#FFFEFE',
     title: '#4B4A4A',
@@ -40,7 +47,9 @@ const COLOR_MAP = {
     cta: "#FF6574",
     charge: '#EF2248',
     alert: '#E52B1F',
-    warning: '#FFAF2D'
+    warning: '#FFAF2D',
+    googlebutton: pallete.white,
+    applebutton: pallete.black
   },
   dark: {
     background: '#1D1D1D',
@@ -61,7 +70,9 @@ const COLOR_MAP = {
     cta: '#FB9199',
     charge: '#FF6574',
     alert: '#FA4242',
-    warning: '#FFCF39'
+    warning: '#FFCF39',
+    googlebutton: pallete.google,
+    applebutton: pallete.white
   }
 }
 

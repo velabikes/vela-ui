@@ -17,6 +17,7 @@ const Text = ({children, style, color, size, weight, textAlign, background, ...p
     fontSize: text.size[size] || size || text.size.medium,
     fontWeight: weight || '400'
   }
+
   return (
     <RNText style={[baseStyle, style]} {...props}>
       {children}
