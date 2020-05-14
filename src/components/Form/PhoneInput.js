@@ -10,6 +10,7 @@ const PhoneInput = ({onChangeText, value, ...props }) => {
       onChangeText={text => {
         onChangeText(phoneFormat(text))
       }}
+      placeholder="00 00000-0000"
       value={maskPhone(value)}
       keyboardType='numeric'
       {...props}

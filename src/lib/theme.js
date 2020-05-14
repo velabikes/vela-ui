@@ -5,8 +5,7 @@ export const ThemeContext = createContext('light')
 const pallete = {
   white: '#FFFFFF',
   black: '#000000',
-  vela: '#3D9771',
-  google: '#4285F4'
+  vela: '#3D9771'
 }
 
 const SPACING_MAP = {
@@ -41,7 +40,7 @@ const COLOR_MAP = {
     border: '#D6D4D4',
     brand: '#3D9771',
     primary: '#43CD8B',
-    secondary: '#4FD4F0',
+    secondary: '#1FBCDA',
     negative: '#E52B1F',
     disabled: '#D6D4D4',
     cta: "#FF6574",
@@ -71,7 +70,7 @@ const COLOR_MAP = {
     charge: '#FF6574',
     alert: '#FA4242',
     warning: '#FFCF39',
-    googlebutton: pallete.google,
+    googlebutton: pallete.white,
     applebutton: pallete.white
   }
 }
