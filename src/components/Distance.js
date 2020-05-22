@@ -1,15 +1,23 @@
 import React from 'react'
-import {Text} from 'react-native'
+import Text from './Text'
+import convert from 'convert-units'
 
-function Distance({meters}) {
-  const unit = meters > 999 ? 'km' : 'm'
-  const value = unit === 'km' ? (meters / 1000).toFixed(1) : meters
+function Distance({
+  meters,
+  system,
+  ...props
+}) {
+  const displayUnit = system === 'metric'
+    ? meters > 999 ? 'km' : 'm'
+    : meters > 1600 ? 'mi' : 'yd'
+
+  const value = convert(meters).from('m').to(displayUnit)
 
   return (
-    <Text>
-      <Text>{value}</Text>
-      <Text>{unit}</Text>
-    </Text>
+    <>
+      <Text {...props}>{value}</Text>
+      <Text {...props}>{displayUnit}</Text>
+    </>
   )
 }
 
