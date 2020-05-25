@@ -35,3 +35,4 @@ export {default as Switch} from "./components/Form/Switch"
 export {default as LiveSpline} from "./components/charts/LiveSpline"
 
 export {useTheme} from "./lib/theme"
+export {getSystem} from "./lib/getSystem"

@@ -1,7 +1,7 @@
 import React from 'react'
 import Text from './Text'
 import convert from 'convert-units'
-import {useTheme} from '../lib/theme'
+import {getSystem} from '../lib/getSystem'
 
 function Speed({
   speed,
@@ -11,9 +11,7 @@ function Speed({
 }) {
   const Value = valueComponent || Text
   const Unit = unitComponent || Text
-  const {locale} = useTheme()
-  const country = locale.slice(3)
-  const system = country === 'US' ? 'imperial' : 'metric'
+  const system = getSystem()
   const unit = system === 'metric' ? 'km/h' : 'm/h'
   const displayUnit = unit === 'm/h' ? 'mi/h' : unit
 
