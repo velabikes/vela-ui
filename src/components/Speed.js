@@ -5,8 +5,12 @@ import {useTheme} from '../lib/theme'
 
 function Speed({
   speed,
+  valueComponent,
+  unitComponent,
   ...props
 }) {
+  const Value = valueComponent || Text
+  const Unit = unitComponent || Text
   const {locale} = useTheme()
   const country = locale.slice(3)
   const system = country === 'US' ? 'imperial' : 'metric'
@@ -17,8 +21,8 @@ function Speed({
 
   return (
     <>
-      <Text {...props}>{value.toFixed(1)}</Text>
-      <Text {...props}>{displayUnit}</Text>
+      <Value {...props}>{value.toFixed(1)}</Value>
+      <Unit {...props}>{displayUnit}</Unit>
     </>
   )
 }
