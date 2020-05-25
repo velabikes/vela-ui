@@ -1,6 +1,7 @@
 import {createContext, useContext} from 'react'
 import {useWindowDimensions} from 'react-native'
 export const ThemeContext = createContext('light')
+export const LocaleContext = createContext('pt-BR')
 
 const pallete = {
   white: '#FFFFFF',
@@ -75,7 +76,7 @@ const COLOR_MAP = {
   }
 }
 
-const theme = ({ variant, breakpoint }) => {
+const theme = ({ variant, breakpoint, locale }) => {
   const baseSpacing = SPACING_MAP[breakpoint]
   const baseFontSize = FONTSIZE_MAP[breakpoint]
 
@@ -130,6 +131,7 @@ const theme = ({ variant, breakpoint }) => {
     margin,
     layout,
     colors,
+    locale,
     typo: {
       text,
       heading,
@@ -148,6 +150,7 @@ export function useTheme(value) {
   const variant = value || useContext(ThemeContext) || "light"
   const {width} = useWindowDimensions()
   const breakpoint = widhtToBreakpoint(width)
+  const locale = useContext(LocaleContext)
 
-  return theme({variant, breakpoint})
+  return theme({variant, breakpoint, locale})
 }

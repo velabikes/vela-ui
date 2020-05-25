@@ -1,7 +1,16 @@
 import React from 'react'
-import {ThemeContext} from '../lib/theme'
+import {ThemeContext, LocaleContext} from '../lib/theme'
 
-const Theme = ({children, ...props}) =>
-  <ThemeContext.Provider {...props}>{children}</ThemeContext.Provider>
+const Theme = ({children, value, locale}) =>
+  {
+    console.log(locale)
+    return (
+      <ThemeContext.Provider value={value}>
+        <LocaleContext.Provider value={locale}>
+          {children}
+        </LocaleContext.Provider>
+      </ThemeContext.Provider>
+    )
+  }
 
 export default Theme
