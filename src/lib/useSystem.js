@@ -1,7 +1,6 @@
-import {useTheme} from './theme'
+import {useCountry} from './useCountry'
 
 export function useSystem() {
-  const {locale} = useTheme()
-  const country = locale.slice(3)
+  const country = useCountry()
   return country === 'US' ? 'imperial' : 'metric'
 }
