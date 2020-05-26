@@ -14,7 +14,7 @@ function Distance({
   const system = useSystem()
   const displayUnit = system === 'metric'
     ? meters > 999 ? 'km' : 'm'
-    : meters > 1600 ? 'mi' : 'yd'
+    : meters > 300 ? 'mi' : 'ft'
 
   const value = convert(meters).from('m').to(displayUnit)
 
