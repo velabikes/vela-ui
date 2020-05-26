@@ -36,3 +36,5 @@ export {default as LiveSpline} from "./components/charts/LiveSpline"
 
 export {useTheme} from "./lib/theme"
 export {useSystem} from "./lib/useSystem"
+export {useLanguage} from "./lib/useLanguage"
+export {useCountry} from "./lib/useCountry"
