@@ -1,7 +1,7 @@
 import React from 'react'
 import Text from './Text'
 import convert from 'convert-units'
-import {getSystem} from '../lib/getSystem'
+import {useSystem} from '../lib/useSystem'
 
 function Distance({
   meters,
@@ -11,7 +11,7 @@ function Distance({
 }) {
   const Value = valueComponent || Text
   const Unit = unitComponent || Text
-  const system = getSystem()
+  const system = useSystem()
   const displayUnit = system === 'metric'
     ? meters > 999 ? 'km' : 'm'
     : meters > 1600 ? 'mi' : 'yd'

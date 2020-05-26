@@ -11,7 +11,7 @@ function Speed({
 }) {
   const Value = valueComponent || Text
   const Unit = unitComponent || Text
-  const system = getSystem()
+  const system = useSystem()
   const unit = system === 'metric' ? 'km/h' : 'm/h'
   const displayUnit = unit === 'm/h' ? 'mi/h' : unit
 
