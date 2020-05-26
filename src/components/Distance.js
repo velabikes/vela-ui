@@ -20,7 +20,7 @@ function Distance({
 
   return (
     <>
-      <Value {...props}>{value.toFixed(1)}</Value>
+      <Value {...props}>{value.toFixed(value > 99 ? 0 : 1)}</Value>
       <Unit {...props}>{displayUnit}</Unit>
     </>
   )
