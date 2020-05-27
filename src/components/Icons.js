@@ -12,7 +12,7 @@ const useTextColor = (background) => {
 
 const useTextSize = (size) => {
   const {
-    typo: { text },
+    typography: { text },
   } = useTheme();
   return text.size[size] || size;
 };

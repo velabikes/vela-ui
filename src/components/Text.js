@@ -4,7 +4,7 @@ import {useTheme} from '../lib/theme'
 import {colorIsDark} from '../lib/colors'
 
 const Text = ({children, style, color, size, weight, textAlign, background, ...props}) => {
-  const {colors, typo: {text}} = useTheme()
+  const {colors, typography: {text}} = useTheme()
   const backgroundValue = colors[background] || background
   const textTheme = useTheme(colorIsDark(backgroundValue) ? 'dark' : 'light')
   const textColors = backgroundValue ? textTheme.colors : colors

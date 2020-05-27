@@ -3,7 +3,7 @@ import Text from '../Text'
 import {useTheme} from '../../lib/theme'
 
 function Heading({children, style, size, ...props}) {
-  const {typo: {subheading}} = useTheme()
+  const {typography: {subheading}} = useTheme()
 
   return (
     <Text

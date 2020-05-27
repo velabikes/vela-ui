@@ -132,7 +132,7 @@ const theme = ({ variant, breakpoint, locale }) => {
     layout,
     colors,
     locale,
-    typo: {
+    typography: {
       text,
       heading,
       subheading

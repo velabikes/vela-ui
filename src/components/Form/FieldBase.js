@@ -3,7 +3,7 @@ import { Field } from 'formik'
 import { useTheme } from '../../lib/theme'
 import Label from "../Label"
 import Spacer from "../Gap"
-import Footnote from "../Typo/Footnote"
+import Footnote from "../Typography/Footnote"
 import Box from "../Box"
 
 const FieldBase = ({

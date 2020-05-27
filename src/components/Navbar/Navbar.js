@@ -3,7 +3,7 @@ import { useSafeArea } from "react-native-safe-area-context";
 import Box from "../Box";
 import HeaderMenuButton from "./NavbarMenuButton";
 import HeaderBackButton from "./NavbarBackButton";
-import Heading from "../Typo/Heading";
+import Heading from "../Typography/Heading";
 
 export default function Navbar({ scene, previous }) {
   const { options, navigation } = scene.descriptor;

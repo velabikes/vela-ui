@@ -4,7 +4,7 @@ import { useTheme } from "../../lib/theme";
 
 function Heading({ children, size, ...props }) {
   const {
-    typo: { heading },
+    typography: { heading },
   } = useTheme();
 
   return (
