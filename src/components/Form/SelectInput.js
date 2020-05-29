@@ -1,46 +1,49 @@
-import React from 'react'
-import {View} from 'react-native'
-import Text from '@vela/ui/src/components/Text'
-import {Down} from '@vela/ui/src/components/Icons'
-import {useTheme} from '@vela/ui/src/lib/theme'
+import React, { useState } from 'react'
+import Box from '../Box'
+import Text from '../Text'
 
-function SelectInput({focus, placeholder, error, selected}) {
-  const {colors} = useTheme()
-  const inputStyle = {
-    padding: 12,
-    borderColor: error ? colors.negative : focus ? colors.link : colors.border,
-    borderWidth: 1,
-    borderRadius: 14,
-    fontSize: 16,
-    lineHeight: 20,
-    color: colors.text,
-    backgroundColor: colors.input,
-    flexDirection: 'row'
+const SelectInput = ({ value, onChangeText, options }) => {
+  const [isOptionsVisible, setIsOptionsVisible] = useState(false)
+  const onPressHandler = () => {
+    setIsOptionsVisible(!isOptionsVisible)
   }
-  const textStyle = {
-    fontSize: 16,
-    lineHeight: 20,
-    flex: 1,
-    color: colors.text
-  }
-  const placeholderStyle = {
-    ...textStyle,
-    color: colors.placeholder
-  }
-  const arrowStyle = {
-    width: 16,
-    height: 20,
-    color: colors.footnote
-  }
+
+  const selectedOption = options.find(option => option.value === value)
+
   return (
-    <View style={inputStyle}>
-      {placeholder && !selected && (
-        <Text style={placeholderStyle}>{placeholder}</Text>
-      )}
-      {selected && <Text style={textStyle}>{selected}</Text>}
-      <Down style={arrowStyle} />
-    </View>
+    <>
+      <Box style={backdropStyle} />
+      <Box>
+        <Box onPress={onPressHandler}>
+          <Text>{selectedOption.label}</Text>
+        </Box>
+        {isOptionsVisible &&
+            <Box style={optionsStyle} >
+              {options.map(({value, label}) =>
+                <Box onPress={() => {
+                  onChangeText(value)
+                }}>
+                  <Text key={value}>{label}</Text>
+                </Box>)
+              }
+            </Box>
+        }
+      </Box>
+    </>
   )
+}
+
+const backdropStyle = {
+  backgroundColor: 'green',
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0
+}
+
+const optionsStyle = {
+  backgroundColor: 'red'
 }
 
 export default SelectInput
