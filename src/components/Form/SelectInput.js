@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Box from '../Box'
 import Text from '../Text'
 
-const SelectInput = ({ value, onChangeText, options }) => {
+const SelectInput = ({ value, onChangeText, options, placeholder }) => {
   const [isOptionsVisible, setIsOptionsVisible] = useState(false)
   const onPressHandler = () => {
     setIsOptionsVisible(!isOptionsVisible)
@@ -15,7 +15,11 @@ const SelectInput = ({ value, onChangeText, options }) => {
       <Box style={backdropStyle} />
       <Box>
         <Box onPress={onPressHandler}>
-          <Text>{selectedOption.label}</Text>
+          <Text>{
+            selectedOption
+              ? selectedOption.label
+              : placeholder
+            }</Text>
         </Box>
         {isOptionsVisible &&
             <Box style={optionsStyle} >
