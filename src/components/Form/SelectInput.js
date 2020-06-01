@@ -24,9 +24,12 @@ const SelectInput = ({ value, onChangeText, options, placeholder }) => {
         {isOptionsVisible &&
             <Box style={optionsStyle} >
               {options.map(({value, label}) =>
-                <Box onPress={() => {
-                  onChangeText(value)
-                }}>
+                <Box
+                  key={value} 
+                  onPress={() => {
+                    onChangeText(value)
+                  }}
+                >
                   <Text key={value}>{label}</Text>
                 </Box>)
               }
