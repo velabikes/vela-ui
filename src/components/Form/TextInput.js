@@ -13,8 +13,7 @@ function TextInput({style, error, onBlur, ...props}) {
   const baseStyle = {
     padding: 12,
     borderColor: error ? colors.negative : focus ? colors.secondary : colors.border,
-    borderWidth: 1,
-    borderRadius: 14,
+    borderBottomWidth: 1,
     fontSize: 16,
     lineHeight: 20,
     backgroundColor: colors.input,
@@ -24,7 +23,6 @@ function TextInput({style, error, onBlur, ...props}) {
   return (
     <BaseTextInput
       style={[baseStyle, style]}
-      placeholderTextColor={colors.placeholder}
       onBlur={handleBlur}
       onFocus={handleFocus}
       {...props}

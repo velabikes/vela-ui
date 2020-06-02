@@ -65,6 +65,19 @@ export const Down = ({ style, background, ...props }) => {
   );
 };
 
+export const Up = ({ style, background, ...props }) => {
+  const textColor = useTextColor(background);
+  return (
+    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
+      <Path
+        d="M4.825 14.55C5.425 15.15 6.325 15.15 6.925 14.55L12.225 9.25L17.425 14.55C18.025 15.05 19.025 15.05 19.625 14.55C20.125 13.95 20.125 12.95 19.625 12.35L13.325 6.05C13.025 5.75 12.625 5.65 12.225 5.65C11.825 5.65 11.425 5.75 11.125 6.05L4.825 12.35C4.225 12.95 4.225 13.95 4.825 14.55Z"
+        fill={(style && style.color) || textColor}
+      />
+    </Svg>
+  );
+};
+
+
 export const Check = ({ style, background, ...props }) => {
   const textColor = useTextColor(background);
   return (
@@ -504,6 +517,7 @@ export default {
   Logo,
   Error,
   Down,
+  Up,
   Check,
   Add,
   Delete,
