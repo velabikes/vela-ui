@@ -25,6 +25,7 @@ function TextInput({style, error, onBlur, ...props}) {
       style={[baseStyle, style]}
       onBlur={handleBlur}
       onFocus={handleFocus}
+      placeholderTextColor={colors.placeholder}
       {...props}
     />
   )

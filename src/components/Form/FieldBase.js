@@ -31,7 +31,6 @@ const FieldBase = ({
         onChangeText={handleChange(name)}
         onBlur={handleBlur(name)}
         error={hasTouched && error}
-        placeholderTextColor={colors.placeholder}
         {...props}
       />
       <Footnote style={baseErrorStyle}>{hasTouched && error}</Footnote>

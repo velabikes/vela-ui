@@ -4,14 +4,13 @@ import Text from '../Text'
 import {useTheme} from '../../lib/theme'
 import { Icons } from '../..'
 
-function SelectInput({ value, onChangeText, options, placeholder, ...props}) {
+function SelectInput({value, onChangeText, options, placeholder, error, ...props}) {
   const {colors} = useTheme()
   const [isOptionsVisible, setIsOptionsVisible] = useState(false)
   const onPressHandler = () => {
     setIsOptionsVisible(!isOptionsVisible)
   }
   const selectedOption = options.find(option => option.value === value)
-
   const inputStyle = {
     padding: 12,
     borderBottomWidth: 1,
@@ -19,7 +18,7 @@ function SelectInput({ value, onChangeText, options, placeholder, ...props}) {
     lineHeight: 20,
     backgroundColor: colors.input,
     color: colors.text,
-    borderColor: colors.border
+    borderColor: error ? colors.negative : colors.border
   }
   
   const optionsStyle = {
@@ -50,7 +49,7 @@ function SelectInput({ value, onChangeText, options, placeholder, ...props}) {
           <Text>{
             selectedOption
               ? selectedOption.label
-              : placeholder
+              : <Text style={{ color: colors.placeholder }}>{placeholder}</Text>
             }</Text>
             {isOptionsVisible ? <Icons.Up /> : <Icons.Down />}
         </Box>
