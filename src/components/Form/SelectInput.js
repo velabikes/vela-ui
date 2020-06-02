@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import Box from '../Box'
 import Text from '../Text'
-import {useTheme} from '../../lib/theme'
 import { Icons } from '../..'
+import { useTheme } from '../../lib/theme'
 
-function SelectInput({value, onChangeText, options, placeholder, error, ...props}) {
-  const {colors} = useTheme()
+function SelectInput({value, name, onChangeText, options, placeholder, error, onBlur, ...props}) {
+  const { colors } = useTheme()
   const [isOptionsVisible, setIsOptionsVisible] = useState(false)
   const onPressHandler = () => {
     setIsOptionsVisible(!isOptionsVisible)
@@ -37,10 +37,10 @@ function SelectInput({value, onChangeText, options, placeholder, error, ...props
   }
   return (
     <>
-      <Box style={backdropStyle} />
+      <Box style={backdropStyle}/>
       <Box>
-        <Box 
-          onPress={onPressHandler} 
+        <Box  
+          onPress={onPressHandler}
           style={inputStyle} 
           direction="row"
           justify="between"
@@ -49,7 +49,7 @@ function SelectInput({value, onChangeText, options, placeholder, error, ...props
           <Text>{
             selectedOption
               ? selectedOption.label
-              : <Text style={{ color: colors.placeholder }}>{placeholder}</Text>
+              : <Text color="placeholder">{placeholder}</Text>
             }</Text>
             {isOptionsVisible ? <Icons.Up /> : <Icons.Down />}
         </Box>
@@ -59,9 +59,10 @@ function SelectInput({value, onChangeText, options, placeholder, error, ...props
                 <Box 
                   style={optionsStyle} 
                   key={value} 
-                  onPress={() => {
-                    onChangeText(value), 
-                    onPressHandler(false)
+                  onPress={() => { 
+                    onBlur({target:{name}})
+                    onChangeText(value)
+                    setIsOptionsVisible(false)
                   }}
                 >
                   <Text key={value}>{label}</Text>

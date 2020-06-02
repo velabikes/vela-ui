@@ -5,6 +5,7 @@ import Label from "../Label"
 import Spacer from "../Gap"
 import Footnote from "../Typography/Footnote"
 import Box from "../Box"
+import Text from "../Text"
 
 const FieldBase = ({
   field = {},
