@@ -9,11 +9,11 @@ export default function Navbar({ scene, previous }) {
   const { options, navigation } = scene.descriptor;
   const title = options.title || scene.route.name;
   const { onBack } = options;
-  const insets = useSafeArea();
+  const {top} = useSafeArea();
 
   return (
     <Box background="foreground">
-      <Box style={{ paddingTop: insets.top }}>
+      <Box style={{ paddingTop: top }}>
         <Box pad="large" direction="row" align="center">
           <Box flex>
             {navigation && navigation.openDrawer && (
