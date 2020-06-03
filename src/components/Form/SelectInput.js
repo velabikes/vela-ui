@@ -9,6 +9,7 @@ function SelectInput({value, name, onChangeText, options, placeholder, error, on
   const [isOptionsVisible, setIsOptionsVisible] = useState(false)
   const onPressHandler = () => {
     setIsOptionsVisible(!isOptionsVisible)
+    isOptionsVisible && onBlur({target:{name}})
   }
   const selectedOption = options.find(option => option.value === value)
   const inputStyle = {
@@ -27,17 +28,8 @@ function SelectInput({value, name, onChangeText, options, placeholder, error, on
     borderColor: colors.background,
     borderBottomWidth: 1
   }
-
-  const backdropStyle = {
-    position: 'absolute',
-    top: 4,
-    right: 0,
-    bottom: 0,
-    left: 0,
-  }
   return (
     <>
-      <Box style={backdropStyle}/>
       <Box>
         <Box  
           onPress={onPressHandler}
