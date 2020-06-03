@@ -1,11 +1,11 @@
 import React from 'react'
 import {Image} from 'react-native'
 
-function ProfileImage({style, ...props}) {
+function ProfileImage({style, width, height, ...props}) {
   const baseContainerStyle = {
-    height: 96,
-    width: 96,
-    borderRadius: 64,
+    height: width,
+    width: height,
+    borderRadius: height,
     marginRight: 'auto',
     marginLeft: 'auto'
   }

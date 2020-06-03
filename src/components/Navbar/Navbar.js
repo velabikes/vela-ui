@@ -8,8 +8,9 @@ import Heading from "../Typography/Heading";
 export default function Navbar({ scene, previous }) {
   const { options, navigation } = scene.descriptor;
   const title = options.title || scene.route.name;
-  const { onBack } = options;
+  const { onBack, navRight } = options;
   const {top} = useSafeArea();
+  const NavRight = navRight;
 
   return (
     <Box background="foreground">
@@ -29,7 +30,9 @@ export default function Navbar({ scene, previous }) {
               {title}
             </Heading>
           </Box>
-          <Box flex />
+          <Box flex align="end" justify="center">
+            {navRight && <NavRight />}
+          </Box>
         </Box>
       </Box>
     </Box>
