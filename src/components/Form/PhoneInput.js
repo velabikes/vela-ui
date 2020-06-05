@@ -10,9 +10,10 @@ const maskByCountry = {
 }
 const maskPhone = (value, country) => maskByCountry[country](value)
 
-const PhoneInput = ({onChangeText, value, ...props }) => {
-  const country = useCountry()
-  const maskedPhone = maskPhone(value, country)
+const PhoneInput = ({onChangeText, value, country, ...props }) => {
+  const localeCountry = useCountry()
+  const maskedPhone = maskPhone(value, country || localeCountry)
+
   return (
     <TextInput
       onChangeText={text => {
