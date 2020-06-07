@@ -3,7 +3,6 @@ import {View} from 'react-native'
 import {Subheading, Card, Heading,  LiveSpline, useTheme} from '@vela/ui'
 import Svg, {Path, Circle} from 'react-native-svg'
 
-const colors = useTheme()
 const containerStyle = {
   width: 100,
   height: 100,
@@ -13,16 +12,20 @@ const containerStyle = {
   overflow: 'hidden',
   backgroundColor: 'rgba(128,128,128,0.3)'
 }
-const textStyle = {
-  textAlign: 'center',
-  color: speed > 80 ? colors.alert : colors.text
-}
+
 const viewStyle = {
   position: 'absolute',
   left: -5
 }
 
 export default function Speedometer({speed = 0}) {
+  const colors = useTheme()
+
+  const textStyle = {
+    textAlign: 'center',
+    color: speed > 80 ? colors.alert : colors.text
+  }
+
   return (
     <>
     <View style={containerStyle}>
