@@ -1,7 +1,7 @@
 import React from 'react'
 import Text from './Text'
 import convert from 'convert-units'
-import {getSystem} from '../lib/getSystem'
+import {useSystem} from '../lib/useSystem'
 
 function Speed({
   speed,

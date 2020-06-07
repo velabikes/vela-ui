@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import {View} from 'react-native'
-import {Subheading, Card, Heading,  LiveSpline} from '@vela/ui'
+import {Subheading, Card, Heading,  LiveSpline, useTheme} from '@vela/ui'
 import Svg, {Path, Circle} from 'react-native-svg'
 
+const colors = useTheme()
 const containerStyle = {
   width: 100,
   height: 100,
@@ -13,7 +14,8 @@ const containerStyle = {
   backgroundColor: 'rgba(128,128,128,0.3)'
 }
 const textStyle = {
-  textAlign: 'center'
+  textAlign: 'center',
+  color: speed > 80 ? colors.alert : colors.text
 }
 const viewStyle = {
   position: 'absolute',
