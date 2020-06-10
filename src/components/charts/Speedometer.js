@@ -18,7 +18,7 @@ const viewStyle = {
   left: -5
 }
 
-export default function Speedometer({speed = 0}) {
+export default function Speedometer({speed = 0, speedMeasure}) {
   const colors = useTheme()
 
   const textStyle = {
@@ -31,7 +31,7 @@ export default function Speedometer({speed = 0}) {
     <View style={containerStyle}>
       {/* <View style={viewStyle}><LiveSpline current={speed} interval={1000} /></View> */}
       <Heading style={textStyle}>{speed}</Heading>
-      <Subheading style={textStyle}>km/h</Subheading>
+      <Subheading style={textStyle}>{speedMeasure}</Subheading>
     </View>
     </>
   );
