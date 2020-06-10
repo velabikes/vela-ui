@@ -66,7 +66,7 @@ const COLOR_MAP = {
     primary: '#84E8CD',
     secondary: '#78DEF5',
     negative: '#FA4242',
-    disabled: '#4B4A4A',
+    disabled: '#7B7B7B',
     cta: '#FB9199',
     charge: '#FF6574',
     alert: '#FA4242',
