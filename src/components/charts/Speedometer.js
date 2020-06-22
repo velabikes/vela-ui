@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {View} from 'react-native'
-import {Subheading, Card, Heading,  LiveSpline, useTheme} from '@vela/ui'
-import Svg, {Path, Circle} from 'react-native-svg'
+import {Subheading, Heading,  LiveSpline, useTheme} from '@vela/ui'
 
 const containerStyle = {
   width: 100,
@@ -19,11 +18,9 @@ const viewStyle = {
 }
 
 export default function Speedometer({speed = 0, speedMeasure}) {
-  const colors = useTheme()
 
   const textStyle = {
-    textAlign: 'center',
-    color: speed > 80 ? colors.alert : colors.text
+    textAlign: 'center'
   }
 
   return (
