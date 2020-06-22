@@ -39,6 +39,7 @@ const Box = ({
   maxWidth,
   maxHeight,
   align,
+  opacity,
   elevation = 0,
   round,
   background,
@@ -60,13 +61,14 @@ const Box = ({
     paddingTop:  margin[pad] || margin[pad.top] || margin[pad.vertical],
     paddingBottom:  margin[pad] || margin[pad.bottom] || margin[pad.vertical],
     borderRadius: margin[round] || (round === 'full' ? 999 : round),
+    opacity,
     maxWidth,
     maxHeight,
     minHeight,
     minWidth,
     height: layout[height] || height,
     width: layout[width] || width,
-    backgroundColor: colors[background] || 'transparent',
+    backgroundColor: colors[background] || background || 'transparent',
     ...(elevation && {
       shadowColor: "#000",
       shadowOffset: {
