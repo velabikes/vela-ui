@@ -519,6 +519,21 @@ export const Brake = ({background, size, ...props}) => {
   );
 };
 
+
+export const Warning = ({background, size, ...props}) => {
+  const textColor = useTextColor(background);
+  const textSize = useTextSize(size);
+
+  return (
+    <Svg width={textSize} height={textSize} viewBox="0 0 24 24" fill="none" {...props}>
+      <Path
+        d="M19.6676 15.4269L14.0155 5.13637C13.1074 3.62222 10.8938 3.6202 9.98447 5.13637L4.33272 15.4269C3.4044 16.9741 4.52831 18.9333 6.34778 18.9333H17.652C19.47 18.9333 20.5959 16.9756 19.6676 15.4269ZM12 17.0763C11.4832 17.0763 11.0625 16.6596 11.0625 16.1477C11.0625 15.6359 11.4832 15.2192 12 15.2192C12.5168 15.2192 12.9375 15.6359 12.9375 16.1477C12.9375 16.6596 12.5168 17.0763 12 17.0763ZM12.9375 13.3621C12.9375 13.874 12.5168 14.2907 12 14.2907C11.4832 14.2907 11.0625 13.874 11.0625 13.3621V8.71948C11.0625 8.20761 11.4832 7.79095 12 7.79095C12.5168 7.79095 12.9375 8.20761 12.9375 8.71948V13.3621Z"
+        fill={textColor}
+      />
+    </Svg>
+  );
+};
+
 const defaultStyle = {
   height: 24,
   width: 24,
@@ -561,5 +576,6 @@ export default {
   Apple,
   Move,
   Brake,
-  Assist
+  Assist,
+  Warning
 };
