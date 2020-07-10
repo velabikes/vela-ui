@@ -6,10 +6,11 @@ import HeaderBackButton from "./NavbarBackButton";
 import Heading from "../Typography/Heading";
 
 export default function Navbar({ scene, previous }) {
+  const safeArea = useSafeArea();
+  const {top} = safeArea
   const { options, navigation } = scene.descriptor;
   const title = options.title || scene.route.name;
   const { onBack, navRight } = options;
-  const {top} = useSafeArea();
   const NavRight = navRight;
 
   return (
