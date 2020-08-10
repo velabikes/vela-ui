@@ -1,6 +1,7 @@
 import React from 'react'
 import {View} from 'react-native'
 import {Subheading, Heading,  LiveSpline, useTheme} from '@vela/ui'
+import Speed from '../Speed'
 
 const containerStyle = {
   width: 100,
@@ -17,7 +18,7 @@ const viewStyle = {
   left: -5
 }
 
-export default function Speedometer({speed = 0, speedMeasure}) {
+export default function Speedometer({speed = 0}) {
 
   const textStyle = {
     textAlign: 'center'
@@ -27,8 +28,11 @@ export default function Speedometer({speed = 0, speedMeasure}) {
     <>
     <View style={containerStyle}>
       {/* <View style={viewStyle}><LiveSpline current={speed} interval={1000} /></View> */}
-      <Heading style={textStyle}>{speed}</Heading>
-      <Subheading style={textStyle}>{speedMeasure}</Subheading>
+      <Speed
+        valueComponent={Heading}
+        unitComponent={Subheading}
+        speed={speed}
+      />
     </View>
     </>
   );

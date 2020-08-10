@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Text from './Text'
 import convert from 'convert-units'
 import {useSystem} from '../lib/useSystem'
@@ -15,11 +15,20 @@ function Speed({
   const unit = system === 'metric' ? 'km/h' : 'm/h'
   const displayUnit = unit === 'm/h' ? 'mi/h' : unit
 
-  const value = convert(speed).from('km/h').to(unit)
+  const [instantSpeed, setInstantSpeed] = useState(0)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (instantSpeed > speed) setInstantSpeed(instantSpeed - 1)
+      if (instantSpeed < speed) setInstantSpeed(instantSpeed + 1)
+    }, 100)
+    return () => clearInterval(interval)
+  })
+
+  const value = convert(instantSpeed).from('km/h').to(unit)
 
   return (
     <>
-      <Value {...props}>{value.toFixed(1)}</Value>
+      <Value {...props}>{value.toFixed(0)}</Value>
       <Unit {...props}>{displayUnit}</Unit>
     </>
   )

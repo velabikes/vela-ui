@@ -7,7 +7,7 @@ import Heading from "../Typography/Heading";
 
 export default function Navbar({ scene, previous }) {
   const safeArea = useSafeArea();
-  const {top} = safeArea
+  const { top } = safeArea;
   const { options, navigation } = scene.descriptor;
   const title = options.title || scene.route.name;
   const { onBack, navRight } = options;
@@ -18,11 +18,13 @@ export default function Navbar({ scene, previous }) {
       <Box style={{ paddingTop: top }}>
         <Box pad="large" direction="row" align="center">
           <Box flex>
-            {navigation && navigation.openDrawer && (
-              <HeaderMenuButton navigation={navigation} />
-            )}
-            {previous && !onBack && (
+            {previous && !onBack ? (
               <HeaderBackButton navigation={navigation} />
+            ) : (
+              navigation &&
+              navigation.openDrawer && (
+                <HeaderMenuButton navigation={navigation} />
+              )
             )}
             {onBack && <HeaderBackButton onPress={onBack} />}
           </Box>
