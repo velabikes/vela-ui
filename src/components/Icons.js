@@ -611,5 +611,6 @@ export default {
   Brake,
   Assist,
   Warning,
-  Park
+  Park,
+  Eco
 };
