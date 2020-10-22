@@ -2,7 +2,7 @@ import React from 'react'
 import {useTheme} from '../../lib/theme'
 import Text from '../Text'
 
-function Footnote({children, style}) {
+function Footnote({children, style, ...props}) {
   const {colors} = useTheme()
   const baseStyle = {
     fontSize: 13,
@@ -11,7 +11,7 @@ function Footnote({children, style}) {
     fontWeight: '600',
   }
 
-  return <Text style={[baseStyle, style]}>{children}</Text>
+  return <Text style={[baseStyle, style]} {...props}>{children}</Text>
 }
 
 export default Footnote
