@@ -54,7 +54,7 @@ const COLOR_MAP = {
   dark: {
     background: '#1D1D1D',
     midground: '#2D2D2D',
-    foreground: '#333434',
+    foreground: '#414242',
     title: '#EFEFEF',
     text: '#FFFEFE',
     footnote: '#C3BEBE',
