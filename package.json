@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/velabikes/vela-ui#readme",
   "peerDependencies": {
-    "react-native": "^0.61.5",
-    "react-native-safe-area-context": "^0.7.3",
-    "react-native-svg": "^9.13.6"
+    "react-native": ">0.61.5",
+    "react-native-safe-area-context": >0.7.3",
+    "react-native-svg": ">9.13.6"
   },
   "devDependencies": {
     "react": "^16.12.0",
