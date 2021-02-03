@@ -62,7 +62,7 @@ const COLOR_MAP = {
     anchor: '#78DEF5',
     input: '#1D1D1D',
     border: '#4B4A4A',
-    brand: '#43CD8B',
+    brand: '#3BB77C',
     primary: '#84E8CD',
     secondary: '#78DEF5',
     negative: '#FA4242',
