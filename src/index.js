@@ -5,6 +5,8 @@ export {default as Button} from "./components/Button"
 export {default as Control} from "./components/Control"
 export {default as Distance} from "./components/Distance"
 export {default as Speed} from "./components/Speed"
+export {default as Carousel} from "./components/Carousel"
+export {default as CarouselItem} from "./components/CarouselItem"
 
 export {default as Footnote} from "./components/Typography/Footnote"
 export {default as Heading} from "./components/Typography/Heading"
