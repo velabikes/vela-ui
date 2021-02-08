@@ -1,6 +1,5 @@
 import React from 'react'
 import {ScrollView, Animated} from 'react-native'
-import {Box , Button, useTheme} from '@vela/ui'
 import Box from './Box'
 import Button from './Button'
 import { useTheme } from "../lib/theme"
