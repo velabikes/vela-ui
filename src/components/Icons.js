@@ -579,6 +579,23 @@ export const Send = ({ style, background, ...props }) => {
   );
 };
 
+export const Alert = ({ style, background, ...props }) => {
+  const textColor = useTextColor(background);
+  return (
+    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
+      <Path
+        d="M19.6564 15.7913C18.5129 14.8248 17.8571 13.412 17.8571 11.9153V9.80672C17.8571 7.14529 15.8802 4.94218 13.3193 4.57311V3.7563C13.3193 3.33807 12.9805 3 12.563 3C12.1455 3 11.8067 3.33807 11.8067 3.7563V4.57311C9.24513 4.94218 7.26891 7.14529 7.26891 9.80672V11.9153C7.26891 13.412 6.61319 14.8248 5.46286 15.7974C5.16866 16.0492 5 16.4153 5 16.8025C5 17.5324 5.5937 18.126 6.32353 18.126H18.8025C19.5324 18.126 20.126 17.5324 20.126 16.8025C20.126 16.4153 19.9574 16.0492 19.6564 15.7913Z"
+        fill={(style && style.color) || textColor}
+      />
+      <Path
+        d="M12.563 21C13.9327 21 15.0785 20.0236 15.3417 18.7311H9.78436C10.0476 20.0236 11.1934 21 12.563 21Z"
+        fill={(style && style.color) || textColor}
+      />
+    </Svg>
+  );
+};
+
+
 const defaultStyle = {
   height: 24,
   width: 24,
@@ -625,5 +642,6 @@ export default {
   Warning,
   Park,
   Eco,
-  Send
+  Send,
+  Alert
 };
