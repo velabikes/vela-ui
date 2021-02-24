@@ -567,15 +567,13 @@ export const Warning = ({ background, size, ...props }) => {
   );
 };
 
-export const Send = ({ background, size, ...props }) => {
+export const Send = ({ style, background, ...props }) => {
   const textColor = useTextColor(background);
-  const textSize = useTextSize(size);
-
   return (
-    <Svg width={textSize} height={textSize} viewBox="0 0 24 24" fill="none" {...props}>
+    <Svg viewBox="0 0 24 24" style={[defaultStyle, style]} {...props}>
       <Path
         d="M5.01833 19.2577L6.36977 13.4053C6.42312 13.1563 6.6365 12.9606 6.90324 12.925L14.4606 12.1423C14.674 12.1245 14.674 11.8043 14.4606 11.7688L6.90324 11.0394C6.6365 11.0216 6.42312 10.826 6.36977 10.5769L5.01833 4.74229C4.89386 4.24421 5.42732 3.83508 5.88966 4.06633L20.6666 11.4663C21.1111 11.6976 21.1111 12.338 20.6666 12.5692L5.88966 19.9337C5.42732 20.1649 4.89386 19.7558 5.01833 19.2577Z"
-        fill={textColor}
+        fill={(style && style.color) || textColor}
       />
     </Svg>
   );
