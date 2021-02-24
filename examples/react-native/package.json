@@ -14,26 +14,30 @@
     "@react-navigation/drawer": "^5.0.4",
     "@react-navigation/native": "^5.0.4",
     "@react-navigation/stack": "^5.1.1",
-    "@vela/ui": "file:../../",
+    "@vela/ui": "./../..",
+    "convert-units": "^2.3.4",
     "escape-string-regexp": "^2.0.0",
-    "react": "16.9.0",
-    "react-native": "0.61.5",
+    "formik": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-native": "^0.63.4",
     "react-native-appearance": "^0.3.1",
     "react-native-gesture-handler": "^1.6.0",
     "react-native-reanimated": "^1.7.0",
-    "react-native-safe-area-context": "^0.7.3",
+    "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.0.0-beta.4",
     "react-native-svg": "^9.13.6",
-    "react-powerplug": "^1.0.0"
+    "react-powerplug": "^1.0.0",
+    "react-test-renderer": "16.9.0",
+    "typescript": "^4.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.9.0",
-    "eslint": "^6.7.2",
+    "eslint": "^5.16.0",
     "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.57.0",
-    "react-test-renderer": "16.9.0"
+    "metro-react-native-babel-preset": "^0.57.0"
   },
   "jest": {
     "preset": "react-native"

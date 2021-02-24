@@ -595,7 +595,6 @@ export const Alert = ({ style, background, ...props }) => {
   );
 };
 
-
 const defaultStyle = {
   height: 24,
   width: 24,
