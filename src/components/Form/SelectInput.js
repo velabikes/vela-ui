@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Box from '../Box'
 import Text from '../Text'
-import { Icons } from '../..'
+import Icons from '../Icons'
 import { useTheme } from '../../lib/theme'
 
 function SelectInput({value, name, onChangeText, options, placeholder, error, onBlur, ...props}) {

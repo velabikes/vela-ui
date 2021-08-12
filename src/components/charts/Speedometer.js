@@ -1,6 +1,9 @@
 import React from 'react'
 import {View} from 'react-native'
-import {Subheading, Heading,  LiveSpline, useTheme} from '@vela/ui'
+
+import Heading from '../Typography/Heading'
+import Subheading from '../Typography/Subheading'
+
 import Speed from '../Speed'
 
 const containerStyle = {

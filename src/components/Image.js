@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box} from '@vela/ui'
+import Box from './Box'
 import {Image as BaseImage, View, ActivityIndicator} from 'react-native'
 import {useTheme} from '../lib/theme'
 
