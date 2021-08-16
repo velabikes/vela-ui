@@ -3,11 +3,13 @@ import {TouchableOpacity} from 'react-native'
 import {useTheme} from '../lib/theme'
 import Label from './Label'
 import Box from './Box'
+import Footnote from './Typography/Footnote'
 
 function Control({options, onSelect, selected}) {
   const {colors} = useTheme()
 
   return (
+    <>
     <Box 
       flex 
       justify="center" 
@@ -49,6 +51,16 @@ function Control({options, onSelect, selected}) {
         )
       })}
     </Box>
+
+    {options.map(({value, description}) => {
+      const isSelected = value === selected
+      return (
+        <>
+          {isSelected && <Footnote>{description}</Footnote>}
+        </>
+      )}
+    )}
+    </>
   )
 }
 
