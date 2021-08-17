@@ -10,8 +10,7 @@ function Control({options, onSelect, selected}) {
 
   return (
     <>
-    <Box 
-      flex 
+    <Box  
       justify="center" 
       direction="row" 
       background="midground"
