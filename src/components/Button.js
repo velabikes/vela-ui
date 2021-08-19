@@ -15,6 +15,7 @@ function Button({
   ...props
 }) {
   const Icon = icon;
+  const {colors} = useTheme()
 
   return (
     <Box
@@ -27,7 +28,7 @@ function Button({
     >
       <Box pad="small" direction="row" align="center">
         {Icon && <Box minWidth="20%" align="center">
-          <Icon size={size} background={background} />
+          <Icon size={size} background={background} style={{color: colors.title}}/>
         </Box>}
         {label && (
           <Box flex align="center">
