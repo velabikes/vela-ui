@@ -3,6 +3,15 @@ import {useWindowDimensions} from 'react-native'
 export const ThemeContext = createContext('light')
 export const LocaleContext = createContext('pt-BR')
 
+const MAP_STYLE = {
+  light: {
+    mapStyle: 'lightTheme',
+  },
+  dark: {
+    mapStyle: 'darkTheme',
+  }
+}
+
 const pallete = {
   white: '#FFFFFF',
   black: '#000000',
@@ -98,6 +107,8 @@ const theme = ({ variant, breakpoint, locale }) => {
 
   const colors = COLOR_MAP[variant]
 
+  const mapTheme = MAP_STYLE[variant]
+
   const text = {
     size: {
       xsmall: baseFontSize * 0.6875,
@@ -131,6 +142,7 @@ const theme = ({ variant, breakpoint, locale }) => {
     margin,
     layout,
     colors,
+    mapTheme,
     locale,
     typography: {
       text,
