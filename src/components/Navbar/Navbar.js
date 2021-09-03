@@ -3,7 +3,6 @@ import { useSafeArea } from "react-native-safe-area-context";
 import Box from "../Box";
 import HeaderMenuButton from "./NavbarMenuButton";
 import HeaderBackButton from "./NavbarBackButton";
-import Heading from "../Typography/Heading";
 
 export default function Navbar({ scene, previous }) {
   const safeArea = useSafeArea();
@@ -27,11 +26,6 @@ export default function Navbar({ scene, previous }) {
               )
             )}
             {onBack && <HeaderBackButton onPress={onBack} />}
-          </Box>
-          <Box flex>
-            <Heading size="small" textAlign="center">
-              {title}
-            </Heading>
           </Box>
           <Box flex align="end" justify="center">
             {navRight && <NavRight />}
