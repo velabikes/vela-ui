@@ -1,10 +1,6 @@
 {
   "name": "@vela/ui",
-<<<<<<< Updated upstream
   "version": "0.6.25",
-=======
-  "version": "0.6.24",
->>>>>>> Stashed changes
   "description": "Vela React UI Toolkit",
   "main": "src/index.js",
   "scripts": {
