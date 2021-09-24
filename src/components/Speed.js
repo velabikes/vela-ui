@@ -1,16 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import Text from './Text'
+import Heading from './Typography/Heading'
+import Paragraph from './Typography/Paragraph'
 import convert from 'convert-units'
 import {useSystem} from '../lib/useSystem'
 
 function Speed({
   speed,
-  valueComponent,
-  unitComponent,
+  size,
   ...props
 }) {
-  const Value = valueComponent || Text
-  const Unit = unitComponent || Text
   const system = useSystem()
   const unit = system === 'metric' ? 'km/h' : 'm/h'
   const displayUnit = unit === 'm/h' ? 'mi/h' : unit
@@ -28,8 +27,8 @@ function Speed({
 
   return (
     <>
-      <Value {...props}>{value.toFixed(0)}</Value>
-      <Unit {...props}>{displayUnit}</Unit>
+      <Heading size={size} {...props}>{value.toFixed(0)}</Heading>
+      <Paragraph>{displayUnit}</Paragraph>
     </>
   )
 }
