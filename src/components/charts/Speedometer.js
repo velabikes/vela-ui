@@ -1,19 +1,15 @@
 import React from 'react'
 import {View} from 'react-native'
 
-import Heading from '../Typography/Heading'
-import Subheading from '../Typography/Subheading'
-
 import Speed from '../Speed'
 
 const containerStyle = {
-  width: 100,
-  height: 100,
-  borderRadius: 100,
-  justifyContent: 'center',
+  width: 96,
+  height: 96,
+  justifyContent: 'space-between',
   alignItems: 'center',
   overflow: 'hidden',
-  backgroundColor: 'rgba(128,128,128,0.3)'
+  backgroundColor: 'transparent'
 }
 
 const viewStyle = {
@@ -21,7 +17,7 @@ const viewStyle = {
   left: -5
 }
 
-export default function Speedometer({speed = 0}) {
+export default function Speedometer({speed = 0, size}) {
 
   const textStyle = {
     textAlign: 'center'
@@ -32,9 +28,8 @@ export default function Speedometer({speed = 0}) {
     <View style={containerStyle}>
       {/* <View style={viewStyle}><LiveSpline current={speed} interval={1000} /></View> */}
       <Speed
-        valueComponent={Heading}
-        unitComponent={Subheading}
         speed={speed}
+        size={size}
       />
     </View>
     </>

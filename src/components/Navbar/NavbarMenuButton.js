@@ -8,7 +8,7 @@ export default function NavbarMenuButton({ navigation }) {
       onPress={navigation && navigation.openDrawer}
       hitSlop={{ top: 30, bottom: 30, left: 50, right: 50 }}
     >
-      <Icons.Menu />
+      <Icons.Menu width={32} height={32} />
     </TouchableOpacity>
   );
 }

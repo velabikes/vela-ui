@@ -15,7 +15,7 @@ function Control({options, onSelect, selected}) {
       direction="row" 
       background="midground"
       round={36}>
-      {options.map(({label, icon, value}) => {
+      {options.map(({label, icon, value, i}) => {
         const isSelected = value === selected
         const baseItemStyle = {
           padding: 12,
@@ -42,7 +42,7 @@ function Control({options, onSelect, selected}) {
         return (
           <TouchableOpacity
             style={baseItemStyle}
-            key={value}
+            key={i}
             onPress={() => onSelect(value)}>
             {icon && <Icon style={baseIconStyle} />}
             {label && <Label style={baseTextStyle}>{label}</Label>}
@@ -51,11 +51,11 @@ function Control({options, onSelect, selected}) {
       })}
     </Box>
 
-    {options.map(({value, description}) => {
+    {options.map(({value, description, i}) => {
       const isSelected = value === selected
       return (
         <>
-          {isSelected && <Footnote>{description}</Footnote>}
+          {isSelected && <Footnote key={i}>{description}</Footnote>}
         </>
       )}
     )}
