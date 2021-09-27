@@ -1,66 +1,72 @@
-import React from 'react'
-import {TouchableOpacity} from 'react-native'
-import {useTheme} from '../lib/theme'
-import Label from './Label'
-import Box from './Box'
-import Footnote from './Typography/Footnote'
+import React from "react";
+import { TouchableOpacity } from "react-native";
+import { useTheme } from "../lib/theme";
+import Label from "./Label";
+import Box from "./Box";
+import Footnote from "./Typography/Footnote";
 
-function Control({options, onSelect, selected}) {
-  const {colors} = useTheme()
+function Control({ options, onSelect, selected }) {
+  const { colors } = useTheme();
 
   return (
     <>
-    <Box  
-      justify="center" 
-      direction="row" 
-      background="midground"
-      round={36}>
-      {options.map(({label, icon, value, i}) => {
-        const isSelected = value === selected
-        const baseItemStyle = {
-          padding: 12,
-          flex: 1,
-          justifyContent: 'center',
-          flexDirection: 'row',
-          borderRadius: 36,
-          ...(isSelected && {
-            backgroundColor: colors.secondary
-          })
-        }
-        const baseTextStyle = {
-          fontSize: 16,
-          lineHeight: 16,
-          color: isSelected ? colors.background : colors.disabled
-        }
-        const baseIconStyle = {
-          width: 16,
-          height: 16,
-          marginRight: 4,
-          color: isSelected ? colors.background : colors.disabled
-        }
-        const Icon = icon
+      {options.map(({ value, description }) => {
+        const isSelected = value === selected;
         return (
-          <TouchableOpacity
-            style={baseItemStyle}
-            key={i}
-            onPress={() => onSelect(value)}>
-            {icon && <Icon style={baseIconStyle} />}
-            {label && <Label style={baseTextStyle}>{label}</Label>}
-          </TouchableOpacity>
-        )
+          <Box key={`note-${value}`}>
+            {isSelected && <Footnote>{description}</Footnote>}
+          </Box>
+        );
       })}
-    </Box>
-
-    {options.map(({value, description, i}) => {
-      const isSelected = value === selected
-      return (
-        <>
-          {isSelected && <Footnote key={i}>{description}</Footnote>}
-        </>
-      )}
-    )}
+      <Box justify="around" direction="row" background="foreground">
+        {options.map(({ label, icon, value }) => {
+          const isSelected = value === selected;
+          const baseStyle = {
+            borderRadius: 46,
+            height: 64,
+            width: 64,
+            marginTop: 12,
+          };
+          const baseItemStyle = {
+            padding: 12,
+            flex: 1,
+            justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
+            borderRadius: 46,
+            height: 64,
+            width: 64,
+            ...(isSelected && {
+              backgroundColor: colors.text,
+            }),
+          };
+          const baseTextStyle = {
+            fontSize: 16,
+            lineHeight: 16,
+            color: isSelected ? colors.background : colors.disabled,
+          };
+          const baseIconStyle = {
+            width: 16,
+            height: 16,
+            marginRight: 4,
+            color: isSelected ? colors.background : colors.disabled,
+          };
+          const Icon = icon;
+          return (
+            <Box key={`opt-${value}`} background="midground" style={baseStyle}>
+              <TouchableOpacity
+                style={baseItemStyle}
+                onPress={() => onSelect(value)}
+              >
+                {icon && <Icon style={baseIconStyle} />}
+                {label && <Label style={baseTextStyle}>{label}</Label>}
+              </TouchableOpacity>
+            </Box>
+          );
+        })}
+      </Box>
     </>
-  )
+  );
 }
 
-export default Control
+export default Control;
