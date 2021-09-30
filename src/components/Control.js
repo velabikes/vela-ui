@@ -4,6 +4,7 @@ import { useTheme } from "../lib/theme";
 import Label from "./Label";
 import Box from "./Box";
 import Footnote from "./Typography/Footnote";
+import { Paragraph } from "@vela/ui";
 
 function Control({ options, onSelect, selected }) {
   const { colors } = useTheme();
@@ -14,7 +15,7 @@ function Control({ options, onSelect, selected }) {
         const isSelected = value === selected;
         return (
           <Box key={`note-${value}`}>
-            {isSelected && <Footnote>{description}</Footnote>}
+            {isSelected && <Paragraph>{description}</Paragraph>}
           </Box>
         );
       })}
@@ -28,14 +29,12 @@ function Control({ options, onSelect, selected }) {
             marginTop: 12,
           };
           const baseItemStyle = {
-            padding: 12,
+            padding: 0,
             flex: 1,
             justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
             borderRadius: 46,
-            height: 64,
-            width: 64,
             ...(isSelected && {
               backgroundColor: colors.text,
             }),
@@ -48,7 +47,7 @@ function Control({ options, onSelect, selected }) {
           const baseIconStyle = {
             width: 16,
             height: 16,
-            marginRight: 4,
+            marginBottom: 4,
             color: isSelected ? colors.background : colors.disabled,
           };
           const Icon = icon;
