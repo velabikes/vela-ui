@@ -1,37 +1,21 @@
-import React from 'react'
-import {View} from 'react-native'
+import React from "react";
+import { View } from "react-native";
 
-import Speed from '../Speed'
+import Speed from "../Speed";
 
 const containerStyle = {
-  width: 96,
+  justifyContent: "space-between",
+  alignItems: "center",
   height: 96,
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  overflow: 'hidden',
-  backgroundColor: 'transparent'
-}
+};
 
-const viewStyle = {
-  position: 'absolute',
-  left: -5
-}
-
-export default function Speedometer({speed = 0, size}) {
-
-  const textStyle = {
-    textAlign: 'center'
-  }
-
+export default function Speedometer({ speed = 0, size }) {
   return (
     <>
-    <View style={containerStyle}>
-      {/* <View style={viewStyle}><LiveSpline current={speed} interval={1000} /></View> */}
-      <Speed
-        speed={speed}
-        size={size}
-      />
-    </View>
+      <View style={containerStyle}>
+        {/* <View style={viewStyle}><LiveSpline current={speed} interval={1000} /></View> */}
+        <Speed speed={speed} size={size} />
+      </View>
     </>
   );
 }
