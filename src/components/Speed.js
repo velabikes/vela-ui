@@ -17,9 +17,9 @@ function Speed({ speed, size, ...props }) {
   const [instantSpeed, setInstantSpeed] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      if (instantSpeed > speed) setInstantSpeed(instantSpeed - 1);
-      if (instantSpeed < speed) setInstantSpeed(instantSpeed + 1);
-    }, 100);
+      if (instantSpeed > speed.toFixed(0)) setInstantSpeed(instantSpeed - 1);
+      if (instantSpeed < speed.toFixed(0)) setInstantSpeed(instantSpeed + 1);
+    }, 50);
     return () => clearInterval(interval);
   });
 
