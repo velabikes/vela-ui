@@ -1,6 +1,6 @@
 {
   "name": "@vela/ui",
-  "version": "0.6.30",
+  "version": "0.6.31",
   "description": "Vela React UI Toolkit",
   "main": "src/index.js",
   "scripts": {
